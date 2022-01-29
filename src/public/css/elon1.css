@@ -1,0 +1,27 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.list{
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.img{
+    display: flex;
+    flex-direction: column;
+}
+
+.img img{
+    width: 400px;
+    height: 400px;
+}
+
+.data{
+    display: flex;
+    flex-direction: column;
+}
