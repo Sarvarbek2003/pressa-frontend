@@ -11,6 +11,7 @@ let str = ""
 
 function redner(elonlar){
     elonlist.innerHTML = null
+    if(!elonlar.users) return
     elonlar.users.forEach(elon => {
         elon.online ? str = "Online" : str = "Offline"
         const [div] = createElements('div')
@@ -39,7 +40,7 @@ function redner(elonlar){
 let kartegoriya = document.querySelector('#kartegoriya')
 function filter(elonlar){
     kartegoriya.innerHTML = null
-    console.log()
+    if(!elonlar.cart) return
     Object.keys(elonlar.cart).forEach(el => {
         const [ option ] = createElements('option')
         option.value = el

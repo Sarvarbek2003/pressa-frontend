@@ -17,7 +17,7 @@ const GET = async(req, res, next) => {
 
 		resp  = await axios.request(options)
 
-		if(!req.postId) res.json(resp.data)
+		if(!req.postId) res.json(resp.data), next()
 		
 		elon = resp.data.users.find(el => el.ID == req.postId)
 		

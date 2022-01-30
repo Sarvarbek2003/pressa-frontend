@@ -14,6 +14,7 @@ app.use(express.static( path.join(__dirname, 'public')))
 app.set('views',  path.join(__dirname, 'views'))                                                                                                                                                                    
 
 const announcementRout = require('./routes/announcements.js')
+const bot = require('./bot/bot.js')
 const rout = require('./routes/routs.js')
 
 
@@ -21,13 +22,15 @@ app.get('/', (req, res) => res.render('index'))
 app.get('/adm/login', (req, res) => res.render('login'))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 app.use('/add', (req, res) => res.render('elon'))
 
+app.get('/post', bot.BOT)
 app.use('/announcement',rout,(req,res) => ID = req.postId)
 
 app.use('/56846846818416',(req,res,next) => {
     if(ID == 0) {
         next()
-    }else req.postId = ID, next() 
+    }else req.postId = ID, ID = 0, next() 
 },announcementRout)
 
+// bot.BOT()
 
 app.listen(PORT, () => console.log('server is running on http://localhost:' + PORT))                                                                                                                                                                        

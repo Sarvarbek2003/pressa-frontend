@@ -1,0 +1,150 @@
+.hero__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.hero__item {
+  width: 32%;
+  background: #FFFFFF;
+  border: 1px solid rgba(23, 38, 110, 0.1);
+  box-sizing: border-box;
+  border-radius: 2px;
+  margin: 15px 0;
+}
+
+.hero__img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 2px 2px 0px 0px;
+}
+
+.hero__title {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  color: $color-dark-blue;
+  margin: 20px 25px;
+}
+
+.hero__date-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 25px 23px 25px;
+  border-bottom: 1px solid rgba(23, 38, 110, 0.1);
+}
+
+.hero__date {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  color: #526EFF;
+}
+
+.hero__tip {
+  padding: 4px 10px;
+  color: #526EFF;
+  background: rgba(82, 110, 255, 0.1);
+  border: 1px solid #526EFF;
+  box-sizing: border-box;
+  border-radius: 100px;
+}
+
+.hero__tip--online {
+  color: $color-red;
+  background: rgba(247, 79, 56, 0.1);
+  border: 1px solid #F74F38;
+}
+
+.hero__bottom {
+  padding: 20px 25px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.hero__profile-box {
+  display: flex;
+  align-items: center;
+}
+
+.hero-profile__img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.hero__title-box {
+  margin-left: 10px;
+}
+
+.hero-profile__title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #17266E;
+}
+
+.hero-profile__text {
+  margin: 0;
+  font-size: 12px;
+  line-height: 14px;
+  color: rgba(23, 38, 110, 0.3);
+}
+
+.hero__view {
+  font-size: 13px;
+  line-height: 16px;
+  color: rgba(23, 38, 110, 0.3);
+  display: flex;
+  align-items: center;
+
+  &::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-image: url('../../img/icon-view.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 14px;
+    opacity: 0.3;
+  }
+}
+
+.hero__more-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-more__btn {
+  margin-top: 100px;
+  background: #526EFF;
+  box-shadow: 0px 20px 54px rgba(185, 185, 185, 0.5);
+  border: none;
+  border-radius: 2px;
+  color: $color-white;
+  padding: 20px 110px;
+  text-align: center;
+}
+
+@include breakpoint-down(1000px) {
+  .hero__item {
+    width: 48%;
+  }
+}
+
+// @include breakpoint-down(680px) {
+//   .hero__item {
+//     width: 45%;
+//   }
+// }
