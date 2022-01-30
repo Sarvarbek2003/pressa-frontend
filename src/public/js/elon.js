@@ -22,7 +22,7 @@ ok.onclick = async event => {
 		formData.append('date', date.value)
 		formData.append('time', time.value)
 		const response = await req('/add', 'POST', formData)
-		console.log(response)
+		// if (response.message)
 	} catch(error) {
 		console.log(error.message)
 	}
