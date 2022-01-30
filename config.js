@@ -1,4 +1,4 @@
-const backendApi = 'http://localhost:5005'
+const backendApi = 'https://pressa-uz.herokuapp.com'
 
 
 module.exports = {
