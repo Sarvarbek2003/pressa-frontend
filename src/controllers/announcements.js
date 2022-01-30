@@ -21,6 +21,8 @@ const GET = async(req, res, next) => {
 		
 		elon = resp.data.users.find(el => el.ID == req.postId)
 		
+		req.postId = 0
+
 		if (!elon) return
 
 		let similar = resp.data.users.filter(el => el.supkategoriya == elon.supkategoriya)
@@ -29,9 +31,10 @@ const GET = async(req, res, next) => {
 			announcement : elon,
 			similar: similar
 		}
+		next()
 		res.json(obj)
-		req.postId = 0
 	}catch(error){
+		req.postId = 0
 		res.json({message: error.message})
 	}
 }	

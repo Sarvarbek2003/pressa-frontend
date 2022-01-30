@@ -11,14 +11,14 @@ let ID = 0
 app.engine('html', ejs.renderFile)
 app.set('view engine', 'html')
 app.use(express.static( path.join(__dirname, 'public')))
-app.set('views',  path.join(__dirname, 'views'))
+app.set('views',  path.join(__dirname, 'views'))                                                                                                                                                                    
 
 const announcementRout = require('./routes/announcements.js')
 const rout = require('./routes/routs.js')
 
 
 app.get('/', (req, res) => res.render('index'))
-app.get('/adm/login', (req, res) => res.render('login'))
+app.get('/adm/login', (req, res) => res.render('login'))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 app.use('/add', (req, res) => res.render('elon'))
 
 app.use('/announcement',rout,(req,res) => ID = req.postId)
@@ -30,4 +30,4 @@ app.use('/56846846818416',(req,res,next) => {
 },announcementRout)
 
 
-app.listen(PORT, () => console.log('server is running on http://localhost:' + PORT))
+app.listen(PORT, () => console.log('server is running on http://localhost:' + PORT))                                                                                                                                                                        
