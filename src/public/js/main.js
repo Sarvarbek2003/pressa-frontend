@@ -4,7 +4,7 @@ let str = ""
 let elonlar = []	
 
 ;(async()=>{
-    elonlar = await  req('/56846846818416')
+    elonlar = await  request('/56846846818416')
     console.log(elonlar)
     pagination(elonlar)
     filter(elonlar)
