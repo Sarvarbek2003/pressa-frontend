@@ -9,8 +9,10 @@ let resp
 
 const GET = async(req, res, next) => {
 	try{
+		let headers = req.headers
 		
 		let options = {
+			headers,
 			method: 'GET',
 			url: backendApi+'/announcements',
 		};
