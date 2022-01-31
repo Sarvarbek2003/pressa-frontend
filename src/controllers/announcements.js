@@ -18,8 +18,8 @@ const GET = async(req, res, next) => {
 		};
 
 		resp  = await axios.request(options)
-		console.log(resp)
-		if(!req.postId) res.json(resp.data), next()
+		
+		if(!req.postId) return res.json(resp.data)
 		
 		elon = resp.data.users.find(el => el.ID == req.postId)
 		
