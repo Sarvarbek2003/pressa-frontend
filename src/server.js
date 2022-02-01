@@ -23,7 +23,10 @@ app.get('/adm/login', (req, res) => res.render('login'))
 app.use('/add', (req, res) => res.render('elon'))
 
 app.get('/post', bot.BOT)
-app.use('/announcement',rout,(req,res) => ID = req.postId)
+app.use('/announcement',rout,(req,res) => {
+    ID = req.postId
+    req.postId = 0
+})
 
 app.use('/56846846818416',(req,res,next) => {
     if(ID == 0) {
