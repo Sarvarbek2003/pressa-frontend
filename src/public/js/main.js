@@ -3,14 +3,14 @@ let list = document.querySelector('.hero__list')
 let str = ""
 let elonlar = []	
 
-;(async()=>{
-	setInterval(async() => {
+setTimeout(() => {
+	;(async()=>{
 		elonlar = await  request('/56846846818416')
-	}, 1000);
-    console.log(elonlar)
-    pagination(elonlar)
-    filter(elonlar)
-})()
+		console.log(elonlar)
+		pagination(elonlar)
+		filter(elonlar)
+	})()
+}, 500);
 	
 
 
