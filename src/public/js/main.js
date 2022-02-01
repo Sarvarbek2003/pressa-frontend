@@ -3,7 +3,7 @@ let list = document.querySelector('.hero__list')
 let str = ""
 let elonlar = []	
 
-;(()=>{
+;(async()=>{
 	setInterval(async() => {
 		elonlar = await  request('/56846846818416')
 	}, 1000);
