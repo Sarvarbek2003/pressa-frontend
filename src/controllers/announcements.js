@@ -1,11 +1,8 @@
 const axios = require('axios')
 const { backendApi } = require('../../config.js')
-let elon 
-let resp
-
-
-
-
+let events = []
+let firstData = []
+let admData = []
 
 const GET = async(req, res, next) => {
 	try{
@@ -15,31 +12,74 @@ const GET = async(req, res, next) => {
 			url: backendApi+'/announcements',
 		};
 
-		resp  = await axios.request(options)
+		let resp  = await axios.request(options)
 
-		if(!req.postId) res.json(resp.data), next()
+		if(resp.data) firstData = resp.data
+
+		if(!req.postId) return res.json(firstData)
 		
-		elon = resp.data.users.find(el => el.ID == req.postId)
+		let event = events.find(el => el.ID == req.postId)
 		
 		req.postId = 0
 
-		if (!elon) return
-
-		let similar = resp.data.users.filter(el => el.supkategoriya == elon.supkategoriya)
+		if (!event) return
+		let similar = firstData.users.filter(el => el.supkategoriya == event.supkategoriya)
 
 		let obj = {
-			announcement : elon,
+			announcement : event,
 			similar: similar
 		}
-		next()
+
 		res.json(obj)
 	}catch(error){
 		req.postId = 0
-		res.json({message: error.message})
+		firstData.online = true
+		res.json(firstData)
+	}
+}	
+
+const ALL = async(req, res, next) => {
+	try{
+		let options = {
+			method: 'GET',
+			url: backendApi+'/announcements/data',
+		};
+
+		let event  = await axios.request(options)
+		
+		if(event.data) events.users = event.data
+		
+        else return res.json(events)
+
+		res.json(events)
+	}catch(error){
+		res.json(events)
 	}
 }	
 
 
+const DATA = async(req, res, next) => {
+	try {
+		let options = {
+			headers: {token: req.headers.token, 'user-agent':req['headers']['user-agent']},
+			method: 'GET',
+			url: backendApi+'/admin/data',
+		};
+
+		let event  = await axios.request(options)
+
+		if(event.data) admData = event.data
+		
+
+		return res.json(admData)
+	}catch(error) {
+		return res.json(false)
+	}	
+}
+
+
 module.exports = {
-	GET
+	DATA,
+	GET,
+	ALL
 }

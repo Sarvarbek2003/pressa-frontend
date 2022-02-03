@@ -2,7 +2,7 @@ const REN = (req, res,next) => {
     try{
         const { postId } = req.params
         req.postId = postId
-        res.render('elon1')
+        res.render('single')
         next()
     }catch(error){
         res.json({message: error.message})

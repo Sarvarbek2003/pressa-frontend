@@ -1,0 +1,169 @@
+.card__container{
+  margin-top: 180px;
+}
+
+.table__lists{
+  margin:0 0 0 100px;
+  right: 0;
+}
+
+.lists__control{
+  position: fixed;
+  z-index: 101;
+  width: 1142px;
+  height: 100px;
+  background-color: #ffffff;
+  padding-top: 15px;
+  top: 75px;
+}
+
+.option-modal {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  padding: 25px 0 0 25px;
+  top: 103px;
+  right: 28px;
+  height: 173px;
+  width: 182px;
+  box-shadow: -12px 20px 44px 0px #18266e24;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+.option-modal-active {
+  display: flex;
+}
+.modal__btn {
+  background-color: transparent;
+  color: #17266e;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 23px;
+  padding-bottom: 15px;
+}
+.remove-btn {
+  color: #ff4e27;
+}
+.buttons__wraprer {
+  display: flex;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 26px;
+
+  .active-btn {
+    color: #526eff;
+    border: 1px solid #526eff;
+    background-color: transparent;
+  }
+}
+
+.lists__btn {
+  border: none;
+  background-color: #526eff;
+  height: 41px;
+  width: 130px;
+  color: #ffffff;
+}
+.select-all {
+  padding-right: 15px;
+  font-size: 13px;
+  font-weight: 500;
+display: flex;
+align-items: center;
+line-height: 1px;
+  .select-check {
+    margin: 10px;
+  }
+}
+
+
+
+.right-contol {
+  display: flex;
+  position: absolute;
+  right: 0;
+}
+.option-btn {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.list__menu {
+  margin-top: 50px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.menu__card {
+  padding: 35px 40px 21px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 1142px;
+  border: 1px solid #E8E9F0;
+  border-bottom: none;
+
+  &:first-child {
+    border-radius: 10px 10px 0 0;
+  }
+  &:last-child {
+    border: 1px solid #E8E9F0;
+  }
+}
+.card__wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+.card__img {
+  width: 60px;
+  height: 60px;  
+  border-radius: 50%;
+  margin: 0 15px 0 30px;
+}
+.text__wrapper { 
+  width: 412px;
+}
+
+.card__title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.card__text {
+  display: inline-block;
+  color: #17266e;
+  opacity: 0.4;
+  padding-right: 30px;
+}
+.card__link {
+  text-decoration: none;
+  color: #526eff;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.button__wraper {
+  display: flex;
+}
+.wrapper__btn {
+  height: 40px;
+  width: 130px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  border: none;
+}
+.cencel-btn {
+  background: transparent;
+  border: 1px solid #526eff;
+  margin-right: 10px;
+}
+.ok-btn {
+  background: #526eff;
+  color: #ffffff;
+}

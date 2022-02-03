@@ -1,0 +1,173 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sub-title {
+  position: absolute;
+  top: 30px;
+  
+  a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.2);
+  }
+  b {
+    color: #000;
+  }
+}
+
+.sub {
+  top: 85px;
+}
+
+.filter__label {
+  width: 100px;
+  font-size: 12px;
+  line-height: 15px;
+  color: rgba(255, 255, 255, 1);
+  padding-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter__date,
+.filter__time {
+  width: 318px;
+  color: $color-white;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 23px;
+  background-image: url("../../img/icon-calendar.svg");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center right 20px;
+  position: relative;
+  &::-webkit-inner-spin-button,
+  &::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    width: 40%;
+    height: 40%;
+    right: -70px;
+    position: absolute;
+  }
+}
+.filter__time {
+  background-image: url("../../img/time.svg");
+}
+
+.filter__input {
+  background-image: url("../../img/location.svg");
+  color: $color-white;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 23px;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center right 20px;
+  position: relative;
+}
+
+.label-time {
+  display: none;
+}
+
+.label-time-active {
+  display: flex;
+}
+.filter__subcategory,
+.filter__category,
+.filter__date,
+.filter__input,
+.filter__time {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 23px;
+  margin-top: 4px;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: $color-white;
+  padding: 15px;
+  outline: none;
+  border: none;
+}
+.filter__input {
+  &::placeholder {
+    color: $color-white;
+  }
+}
+
+.filter__tip {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  padding: 2px;
+}
+
+.tip__btn {
+  width: 50%;
+  margin: 0;
+  padding: 15px 40px;
+  background: rgba(255, 255, 255, 0);
+  border: none;
+  border-radius: 2px;
+  color: $color-white;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.tip__btn--active {
+  background-color: rgba(255, 255, 255, 1);
+  color: $color-light-blue;
+}
+
+.filter__label {
+  width: 100%;
+  box-sizing: border-box;
+  margin-right: 20px;
+}
+
+@include breakpoint-down(900px) {
+  .input-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 102%;
+  }
+}
+
+@include breakpoint-down(744px) {
+  .input-wrapper {
+    .filter__label {
+      margin-right: 17px;
+    }
+    
+    input,
+    select {
+      width: 100%;
+    }
+  }
+}
+
+@include breakpoint-down(520px) {
+  .input-wrapper {
+    flex-direction: column;
+    input {
+      margin-right: 40px;
+    }
+  }
+  .filter__label {
+    width: 100%;
+  }
+}
+
+@include breakpoint-down(370px) {
+  .input-wrapper {
+    flex-direction: column;
+  }
+  .filter__label {
+    width: 300px;
+  }
+}

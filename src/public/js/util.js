@@ -1,14 +1,16 @@
-const backendApi = 'https://pressa-uz.herokuapp.com'      ///telegram-back-end.herokuapp.com
+const backendApi = 'http://localhost:5005'      ///telegram-back-end.herokuapp.com
 
 async function request (route, method, body) {
 	let headers = {
 		token: window.localStorage.getItem('token')
 	}
+	
 	if( !(body instanceof FormData) ) {
 		headers['Content-Type'] = 'application/json'
 	}
 
 	let response = await fetch(route, {
+		headers,
 		method,
 		body: (body instanceof FormData) ? body : JSON.stringify(body)
 	})
@@ -32,6 +34,7 @@ async function req (route, method, body) {
 	}
 
 	let response = await fetch(backendApi + route, {
+		headers,
 		method,
 		body: (body instanceof FormData) ? body : JSON.stringify(body)
 	})

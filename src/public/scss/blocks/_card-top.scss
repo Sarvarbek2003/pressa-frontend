@@ -1,0 +1,46 @@
+.card-top {
+  margin-bottom: 25px;
+  border-bottom: 1px solid #fff;
+}
+
+.card-top__holder {
+  padding: 40px 25px;
+  display: flex;
+  align-items: center;
+}
+
+.card-top__img {
+  margin-right: 20px;
+  width: 60px;
+  height: 60px;
+  display: block;
+  border-radius: 50%;
+}
+
+.card-top__name {
+  font-size: 11px;
+  line-height: 13px;
+  color: #FFFFFF;
+}
+
+.card-top__job {
+  font-size: 13px;
+  line-height: 17px;
+  color: #FFFFFF;
+}
+
+@include breakpoint-down (1200px) {
+
+  .card-top__name {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 31px;
+  }
+}
+
+@include breakpoint-down(580px) {
+
+ .card-top__holder {
+    padding: 20px;
+  }
+}

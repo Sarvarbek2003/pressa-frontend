@@ -1,0 +1,159 @@
+.card {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.card__box {
+  margin-right: 80px;
+  height: auto;
+  background-color: #526EFF;
+  border-radius: 2px;
+}
+
+.card-main {
+  padding: 0 25px 40px 25px;
+}
+
+.card__box-title {
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 17px;
+  color: #FFFFFF;
+}
+
+.card__box-link {
+  margin-bottom: 24px;
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration-line: underline;
+  color: #000000;
+}
+
+.card__box-number {
+  margin-bottom: 45px;
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+}
+
+.card__box-watch {
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  line-height: 13px;
+  color: #FFFFFF;
+
+  &::before {
+    margin-right: 6px;
+    width: 15px;
+    height: 10px;
+    background-image: url('../../img/watch.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    content: '';
+  }
+}
+
+.card__title {
+  margin-bottom: 5px;
+  width: 710px;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 31px;
+  color: #17266E;
+}
+
+.card__text {
+  margin-bottom: 25px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 33px;
+  color: #17266E;
+}
+
+.card__img {
+  margin-bottom: 40px;
+}
+
+.card__quotes {
+  margin-bottom: 70px;
+  width: 710px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 33px;
+  color: #17266E;
+}
+
+.card__detail-btn {
+  display: flex;
+}
+
+.card-link__box {
+  display: flex;
+  align-items: center;
+}
+
+
+@include breakpoint-down (1200px) {
+  .card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card__box {
+    margin: 0;
+    margin-bottom: 58px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .card-main {
+    padding: 30px 85px 95px 35px;
+  }
+
+  .card-main__holder {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card__detail,
+  .card__title,
+  .card__img,
+  .card__text,
+  .card__quotes {
+    width: 100%;
+  }
+}
+
+@include breakpoint-down(580px) {
+  .card-main__holder {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-main{
+    padding: 20px;
+  }
+
+  .card__title {
+    font-size: 18px;
+  }
+
+  .card__text {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .card__quotes {
+    font-size: 14px;
+    line-height: 28px;
+  }
+}

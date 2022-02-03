@@ -78,12 +78,21 @@
 }
 
 @include breakpoint-down(600px) {
+  
   .category__dropdown {
     z-index: 5;
     height: 250px;
   }
 
   .category__btn {
-    background-image: none;
+    background-image: ('../../img/icon-arrow-bottom-blue.svg') !important;
+    padding: 12px 20px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .category__count {
+    font-size: 11px;
+    line-height: 14px;
   }
 }

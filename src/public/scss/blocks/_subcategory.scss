@@ -9,21 +9,19 @@
 }
 
 .subcategory--active {
-  display: block;
+  .subcategory {
+    display: block;
+  }
 }
 
-.subcategory-mobile {
-  position: relative;
-}
-
-.subcategory__list, .subcategory-mobile__list {
+.subcategory__list {
   list-style: none;
   margin: 0;
   padding: 0;
   width: 100%;
 }
 
-.subcategory__btn, .subcategory-mobile__info {
+.subcategory__btn {
   border: none;
   background-color: transparent;
   width: 100%;
@@ -36,56 +34,39 @@
   }
 }
 
-.subcategory-mobile__list {
+.subcategory__back {
   display: none;
-  width: 100%;
-  z-index: 5;
-  position: absolute;
-  background: #FFFFFF;
-  box-shadow: 0px 34px 114px rgba(23, 38, 110, 0.2);
-  border-radius: 0 0  2px 2px;
+  svg {
+    width: 25px;
+    height: 10px;
+  }
 }
 
-.subcategory-mobile__btn {
-  width: 100%;
-  padding: 17px 20px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: none;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 23px;
-  text-align: left;
-  color: $color-white;
-  -webkit-appearance: none;
-  background-image: url('../../img/icon-arrow-bottom.svg');
-  background-repeat: no-repeat;
-  background-size: 15px;
-  background-position: center right 20px;
+@include breakpoint-down(900px) {
+
+  .subcategory {
+    background: #FFFFFF;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 57px;
+    z-index: 999;
+  }
+
+  .subcategory--active {
+    .category__dropdown {
+      display: none;
+    }
+  }
+
+  .subcategory__back {
+    display: block;
+  }
 }
 
 @include breakpoint-down(600px) {
 
-  .subcategory__btn {
-    display: block;
-    width: 100%;
-    padding: 17px 22px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: $color-white;
-    font-weight: 300;
-    font-size: 15px;
-    line-height: 23px;
-    background-image: url('../../img/icon-arrow-bottom.svg');
-    background-repeat: no-repeat;
-    background-size: 15px;
-    background-position: center right 20px;
-  }
 
-  .subcategory.subcategory--active {
-    display: none !important;
-  }
-
-  .subcategory-mobile--active .subcategory-mobile__list {
-    display: block;
-  }
 }

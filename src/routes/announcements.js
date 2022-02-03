@@ -4,6 +4,6 @@ const router = require('express').Router()
 
 
 router.get('/', controller.GET)
-// router.get('/:postId', controller.GETT)
+router.get('/all', controller.ALL)
 
 module.exports = router

@@ -1,0 +1,42 @@
+.card-link__btn {
+  padding: 16px;
+  background-color: #526EFF;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.6s ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.card-link__share {
+  width: 56px;
+  height: 56px;
+  margin-right: 15px;
+  background-image: url('../../img/share-icon.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px;
+}
+
+.card-link__comment {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 20px;
+  color: #FFFFFF;
+
+  &::after {
+    margin-left: 16px;
+    background-image: url('../../img/comment.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+    content: '';
+  }
+}

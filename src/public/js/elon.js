@@ -14,6 +14,7 @@ ok.onclick = async event => {
 		formData.append('kartegoriya', kartegoriya.value)
 		formData.append('supkartegoriya', supkartegoriya.value)
 		formData.append('title', tt.value)
+		formData.append('descripion', descripion.value)
 		formData.append('online', type.value)
 		formData.append('link', link.value)
 		formData.append('info', info.value)

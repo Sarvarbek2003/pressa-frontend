@@ -1,0 +1,151 @@
+.nav {
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+}
+
+.nav__logo {
+  text-decoration: none;
+  img{
+    width: 70px;
+    height: 30px;
+    display: block;
+  }
+}
+
+.nav__form {
+  margin-left: 60px;
+  padding: 18px 0;
+  margin-right: auto;
+}
+
+.nav__input {
+  width: 250px;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+outline: none;
+  &::placeholder {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.nav__link {
+  text-decoration: none;
+  display: block;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  color: $color-dark-blue;
+  margin: 0 15px;
+}
+
+.nav__announce {
+  text-decoration: none;
+  margin-left: 25px;
+  padding: 17px 65px;
+  display: flex;
+  align-items: center;
+  background-color: $color-red;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 23px;
+  color: $color-white;
+
+
+  &::before {
+    content: "+";
+    display: block;
+    margin-right: 8px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+  }
+}
+
+.d-none {
+  display: none;
+}
+
+.acount{
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+
+}
+
+.acount__wrapper{
+padding-left: 10px;
+}
+.acount__title{
+  padding: 0;
+  margin: 0;
+  color: #17266E;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 23px;
+  
+}
+.acount__id{
+  
+font-size: 11px;
+font-weight: 500;
+line-height: 17px;
+  padding: 0;
+  margin: 0;
+  opacity: 0.3;
+}
+.acount__img{
+  border-radius: 50%;
+  height: 44px;
+width: 44px;
+}
+
+
+@include breakpoint-down(950px) {
+  .nav__input {
+    width: 200px;
+  }
+
+  .nav__link {
+    margin: 0 10px;
+  }
+
+  .nav__announce {
+    margin-left: 10px;
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+}
+
+@include breakpoint-down(800px) {
+  .nav__form {
+    margin-left: 40px;
+    padding: 15px 0;
+  }
+
+  .nav__announce {
+    padding: 15px 30px;
+    font-size: 15px;
+    line-height: 19px;
+  }
+}
+
+@include breakpoint-down(730px) {
+
+
+  .nav__form {
+    display: none;
+  }
+
+  .nav__logo {
+    margin-right: auto;
+  }
+}

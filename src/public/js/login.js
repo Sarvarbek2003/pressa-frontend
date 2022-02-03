@@ -34,7 +34,7 @@ btn.onclick = async event => {
 					
 					if(res.status == 200) {
 						window.localStorage.setItem('token', res.token)
-						window.location.pathname = '/'
+						window.location.pathname = '/admin'
 					}	
 					else errorMessage.textContent = res.message, errorMessage.style.color = 'red'
 				
@@ -42,7 +42,6 @@ btn.onclick = async event => {
 				 else errorMessage.textContent = "Kodni kiriting", errorMessage.style.color = 'red'
 			}
 		}
-		// window.location = '/'
 	} catch(error) {
 		errorMessage.textContent = error.message
 	}

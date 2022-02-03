@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pressa</title>
+  <link rel="stylesheet" href="adminPg/css/main.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <header class="header">
+    <nav class="header__nav nav">
+      <div class="header__container container">
+        <a href="#" class="nav__logo">
+          <img src="adminPg/img/site-logo.svg" width="70" height="30" alt="logo" />
+        </a>
+        <form class="nav__form" method="post">
+          <input class="nav__input" type="text" placeholder="Qidiruv" />
+        </form>
+        <div class="acount">
+          <img src="adminPg/img/avatarka.jpg" alt="" class="acount__img" width="44"/>
+          <div class="acount__wrapper">
+            <h3 class="acount__title">Abbos Janizakov</h3>
+            <p class="acount__id">id:12432</p>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="main">
+    <div class="main__container container">
+      <aside class="main__aside aside">
+        <ul class="aside__menu menu">
+          <li class="menu__item item">
+            <a href="#" class="item__link">
+              <img class="item__icon" src="adminPg/img/stark-icon.svg" alt="icon">
+            </a>
+          </li>
+          <li class="menu__item item">
+            <a href="#" class="item__link">
+              <img class="item__icon" src="adminPg/img/stark-icon.svg" alt="icon">
+            </a>
+          </li>
+          <li class="menu__item item">
+            <a href="#" class="item__link">
+              <img class="item__icon" src="adminPg/img/stark-icon.svg" alt="icon">
+            </a>
+          </li>
+          <li class="menu__item item">
+            <a href="#" class="item__link">
+              <img class="item__icon" src="adminPg/img/stark-icon.svg" alt="icon">
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <section class="main__table table">
+        <div class="table__lists lists">
+          <div class="lists__control">
+            <div class="buttons__wraprer">
+              <button class="lists__btn active-btn">Pending</button>
+              <button class="lists__btn">Accepted</button>
+              <button class="lists__btn">Rejected</button>
+            </div>
+            <div class="right-contol">
+              <label for="check" class="select-all">
+                <input type="checkbox" name="check" id="check" class="select-check" />
+                Select all
+              </label>
+
+              <button class="option-btn" id="options">
+                <img src="adminPg/img/option.svg" alt="" />
+              </button>
+            </div>
+            <div class="option-modal modal">
+              <button class="modal__btn" id="ok">Tasdiqlash</button>
+              <button class="modal__btn" id="cencel">Bekor qilish</button>
+              <button class="modal__btn remove-btn" id="remove">
+                O‘chirish
+              </button>
+            </div>
+          </div>
+
+        <div class="card__container">
+          <ul class="list__menu menu">
+            <!-- <li class="menu__card card">
+              <div class="card__wrapper">
+                <input class="card__checkbox" type="checkbox" name="checkbox" id="checkbox" />
+                <img src="adminPg/img/avatarka.jpg" alt="avatarka" width="60" class="card__img" />
+                <span class="text__wrapper">
+                  <h3 class="card__title">
+                    Ux Ui dan masterklass o’tkazib yubormang Yoshlar
+                    telekanalida
+                  </h3>
+                  <p class="card__text">Abbos Janizakov</p>
+                  <a class="card__link" href="tel:+998995142358">+998995142358</a>
+                </span>
+              </div>
+              <div class="button__wraper wrapper">
+                <button class="wrapper__btn cencel-btn" id="cencel">Bekor qilish</button>
+                <button class="wrapper__btn ok-btn" id="ok">Tasdiqlash</button>
+              </div>
+            </li> -->
+          </ul>
+        </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer"></footer>
+
+  <script src="./js/util.js"></script>
+  <script src="./js/admin.js"></script>
+</body>
+
+</html>

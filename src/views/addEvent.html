@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pressa</title>
+  <link rel="stylesheet" href="css/main.min.css">
+</head>
+
+<body class="anons">
+  
+  <header class="header">
+    <div class="header__container container">
+      <nav class="header__nav nav">
+        <button class="nav__menu-btn " onclick="openNav()"></button>
+        
+        <div id="mySidenav" class="nav__menu-box">
+          <button class="closebtn" onclick="closeNav()">&times;</button>
+          <a href="./about.html" class="nav__menu-link">Loyha haqimizda</a>
+          <a href="#" class="nav__menu-link">Yordam</a>
+        </div>
+        <a href="./index.html" class="nav__logo">
+          <img src="img/site-logo.svg" width="70" height="30" alt="logo">
+        </a>
+        
+        <form class="nav__form" method="post">
+          <span class="nav__search-span">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M10.2452 9.30493C11.8744 7.21261 11.7272 4.1855 9.80379 2.26205C7.72099 0.179252 4.34411 0.179252 2.26132 2.26205C0.17852 4.34484 0.17852 7.72172 2.26132 9.80452C4.18477 11.728 7.21188 11.8751 9.3042 10.246C9.31323 10.2562 9.32262 10.2662 9.33238 10.2759L12.1608 13.1044C12.4212 13.3647 12.8433 13.3647 13.1036 13.1044C13.364 12.844 13.364 12.4219 13.1036 12.1615L10.2752 9.33312C10.2654 9.32336 10.2554 9.31396 10.2452 9.30493ZM8.86098 3.20486C10.4231 4.76695 10.4231 7.29962 8.86098 8.86171C7.29888 10.4238 4.76622 10.4238 3.20412 8.86171C1.64203 7.29962 1.64203 4.76695 3.20412 3.20486C4.76622 1.64276 7.29888 1.64276 8.86098 3.20486Z"
+              fill="#17266E" />
+            </svg>
+          </span>
+          <input class="nav__input" type="text" placeholder="Qidiruv">
+        </form>
+        
+        <a href="./about.html" class="nav__link">Loyha haqida</a>
+        <a href="#" class="nav__link">Yordam</a>
+        
+        <a href="#" class="nav__announce">Elon berish</a>
+      </nav>
+    </div>
+  </header>
+  
+  <main class="main">
+    <div class="main__container container">
+      <span class="sub-title"><a href="./index.html" class="sub-link">Bosh sahifa </a><b>| E’lon berish</b></span>
+      
+      <!-- LEFT ASIDE SECTION -->
+      
+      <aside class="left-aside" id="aside">
+        <div class="main__filter filter">
+          
+          <form class="filter__form">
+            <div class="input-wrapper">
+              <label class="filter__label">Bo’lib o’tadigan sanani kiriting
+                <input type="date" name="date" id="date" class="filter__date">
+              </label>
+              <label class="filter__label">Bo’lib o’tadigan soatni kiriting
+                <input type="time" name="time" id="time" class="filter__time">
+              </label>
+            </div>
+            <div class="input-wrapper">
+              <label class="filter__label">Sohangizini kiriting
+                <select name="category" id="category" class="filter__category">
+                  <option value="it">IT</option>
+                  <option value="smm">SMM</option>
+                </select>
+              </label>
+              <label class="filter__label">Sohani yo’nalishini kiritng
+                <select name="direction" id="direction" class="filter__subcategory">
+                  <option value="it">Frontend</option>
+                  <option value="smm">Backend</option>
+                </select>
+              </label>
+            </div>
+            <div class="filter__label">Tadbir turini tanlang
+              <div class="filter__tip tip">
+                <button type="button" id="online" class="tip__btn online tip__btn--active">Online</button>
+                <button type="button" id="ofline" class="tip__btn ofline">Offline</button>
+              </div>
+            </div>
+            <label class="filter__label">Online manzilni kiriting kiriting
+              <input type="text" id="url" placeholder="Link kiritng" class="filter__input" autocomplete="off">
+            </label>
+          </form>
+        </div>
+      </aside>
+      
+      <!-- MAIN SECTION -->
+      
+      <section class="personal-data personal">
+        
+        <div class="about__modal d-none" id="modal">
+          <h2 class="modal__title">Sorovingiz qabul qilindi E’loningiz uchun
+            Rahmat Bizni kuzatib boring</h2>
+            <button class="modal__btn">ok</button>
+          </div>
+          
+          <h2 class="personal__title">Shahsi malumotlar</h2>
+          <div class="personal__info info">
+            <form class="info__forma">
+              <label class="upload-img">
+                <input type="file" class="img-upload">
+                <span class="form__avatar">
+                  <img src="#" alt="" width="80" id="avatar">
+                </span>
+                Upload img
+              </label>
+              <div class="info__form">
+                
+                <div class="input-wrapper">
+                  <label class="form__label">Ism
+                    <input type="text" class="form__input" placeholder="Ismingizni kiriting">
+                  </label>
+                  <label class="form__label">Kasb yoki mutahasislig
+                    <input type="text" class="form__input" placeholder="Kasb yoki mutahasislig kirirting">
+                  </label>
+                </div>
+                
+                <div class="input-wrapper">
+                  <label class="form__label">Telefon raqam
+                    <input type="text" class="form__input" placeholder="telefon raqamingizni kiriting">
+                  </label>
+                  <label class="form__label">Email pochta
+                    <input type="text" class="form__input" placeholder="Email pochta kiriting">
+                  </label>
+                </div>
+                
+              </div>
+              
+            </form>
+          </div>
+          
+          <h2 class="personal__title">E’lon haqida malumotlar</h2>
+          <div class="personal__info">
+            <form class="info__about about">
+              
+              <label class="about__label">Matin sarlavhasi
+                <input type="text" class="about__input" placeholder="Mavzini kiriting">
+              </label>
+              <label class="about__label">
+                Elon haqida qisqacha malumot
+                <input type="text" class="about__input" placeholder="Elon haqida qisqacha malumotni kiriting">
+              </label>
+              
+              <label for="img-upload">
+                <div id="mg-upload" class="img-box">
+                  <input type="file" name="uploading" class="img-upload" id="img-upload">
+                  <h2 class="img-box__title">Upload img</h2>
+                  <img src="#" alt="">
+                  
+                </div>
+              </label>
+              <label class="about__label">Elon haqida batavsil malumot
+                <textarea name="texterea" id="texterea" class="about__texterea"
+                placeholder="Elon haqida batavsil malumotni kiriting"></textarea>
+                
+              </label>
+              
+            </form>
+          </div>
+          <div class="btn-wraper">
+            <button class="cencel-btn">Bekor qilish</button>
+            <button class="ok-btn" id="confirm">Tasdiqlash</button>
+          </div>
+        </section>
+        
+      </div>
+    </main>
+    
+    <footer class="footer">
+      <div class="footer__container container">
+        
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+  
+  </html>
