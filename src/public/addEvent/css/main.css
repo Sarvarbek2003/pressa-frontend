@@ -880,7 +880,7 @@ img {
 }
 
 .filter__time {
-  background-image: url("../../img/time.svg");
+  background-image: url("addEvent/img/time.svg");
 }
 
 .filter__input {
@@ -1136,7 +1136,7 @@ option {
   border-radius: 50%;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  background-image: url("../../img/Avatar.svg");
+  background-image: url("../../img/t.svg");
   background-size: cover;
   background-position: center center;
   margin-bottom: 10px;

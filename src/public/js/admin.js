@@ -5,7 +5,7 @@ let data
 
 async function fech(){
     data = await request('/admin/data')   // frond end serverga so`rov 
-    if(data == false) window.location = '/'
+    // if(data == true) window.location = '/'
 }
 fech()
 
@@ -59,6 +59,8 @@ function render(result){
                 li.remove()
                 update(el.ID, (btn.id == 'ok'? 'accepted' : 'rejected') )
             }
+            btn.onmouseover = () =>  btn.style.background = "red"
+            btn.onmouseout = () => btn.style.background = "blue"
             div2.append(btn)
             span.append(h3,p,a)
             div.append(input,img,span)
@@ -80,13 +82,15 @@ async function update(ID, result){
     formData.append('result', result)
 
     let res = await req('/admin/update','PUT', formData)
-    if(res){
+    if(res.messag == 'OK'){
         setTimeout(() => {
             btnss.forEach(bt => {
                 bt.removeAttribute('disabled','disabled') // serverdan respnse qaytganida buttonlar yonadi
             })
         }, 2000);
-    } 
+    } else { 
+        alert('Xatolik yuz berdi qaytadan urining')
+    }
 }
 
 /// bu funksiyada serverdan response qaymagan xolda buttonlarni yoqib qo`yadi

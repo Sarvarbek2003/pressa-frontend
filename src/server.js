@@ -13,15 +13,17 @@ app.set('view engine', 'html')
 app.use(express.static( path.join(__dirname, 'public')))
 app.set('views',  path.join(__dirname, 'views'))                                                                                                                                                                    
 
+
 const announcementRout = require('./routes/announcements.js')
-const fechData = require('./controllers/announcements.js')
 const rout = require('./routes/routs.js')
+
+const fechData = require('./controllers/announcements.js')
 
 
 app.get('/', (req, res) => res.render('home'))
 app.get('/admin', (req, res) => res.render('admin'))
 app.get('/adm/login', (req, res) => res.render('login'))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-app.use('/add', (req, res) => res.render('elon'))
+app.use('/add', (req, res) => res.render('addEvent'))
 
 app.get('/data',fechData.ALL)
 app.get('/admin/data',fechData.DATA)

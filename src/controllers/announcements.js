@@ -18,12 +18,10 @@ const GET = async(req, res, next) => {
 
 		if(!req.postId) return res.json(firstData)
 		
-		let event = events.find(el => el.ID == req.postId)
-		
-		req.postId = 0
+		let event =  firstData.announs.find(el => el.ID == req.postId)
 
 		if (!event) return
-		let similar = firstData.users.filter(el => el.supkategoriya == event.supkategoriya)
+		let similar = firstData.announs.filter(el => el.subcategory == event.subcategory)
 
 		let obj = {
 			announcement : event,
@@ -47,7 +45,7 @@ const ALL = async(req, res, next) => {
 
 		let event  = await axios.request(options)
 		
-		if(event.data) events.users = event.data
+		if(event.data) events.announs = event.data
 		
         else return res.json(events)
 
@@ -70,10 +68,9 @@ const DATA = async(req, res, next) => {
 
 		if(event.data) admData = event.data
 		
-
 		return res.json(admData)
 	}catch(error) {
-		return res.json(false)
+		return res.json(true)
 	}	
 }
 

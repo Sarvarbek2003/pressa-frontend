@@ -3,62 +3,54 @@ let list = document.querySelector('.hero__list')
 let body = document.querySelector('body')
 let categori = document.querySelector('.category')
 let subl = document.querySelector('.filter__category-box')
-let searchIput = document.querySelector('.nav__input')
 let str = ""
-let events = []	
+let events = []
 let allevents = []	
 let online = false
 
 ;(async()=>{
 	events = await  request('/56846846818416')  // backendan 1- bo`lib keladigan 24 ta malumot tezroq render qilish uchun  
 	if (events.online) online = true
+	console.log(events.online)
 	pagination(events)
 	filter(events)
 })()
 
 ;(async()=>{
-	allevents = await request('/56846846818416/all') // backend serverdan keladigan 2 - malumot bu orqa fonda keladi va bunda keluvchi malumolar soni cheklanmagan -->
-})()												 // --> bu yerdagi barcha malumotlardan filter qilishdan foydalaniladi shunda databazafagi barcha berilgan elonlar filter qilib olinadi
-
+	allevents = await request('/56846846818416/all')  // backend serverdan keladigan 2 - malumot bu orqa fonda keladi va bunda keluvchi malumolar soni cheklanmagan -->
+	// console.log(allevents)
+})()												  // --> bu yerdagi barcha malumotlardan filter qilishdan foydalaniladi shunda databazafagi barcha berilgan elonlar filter qilib olinadi
 
 document.querySelector('.filter__form').addEventListener('submit', evt => {
 	evt.preventDefault()
 })
 
-let photo = 'https://picsum.photos/400' 
-let ph = ''
-let pImg = ''
+let photo = './img/static.jpg'                  		// bu rasmlar static backend o`chganda undan keladigan rasmlarnig o`rniga qo`yadi
+let pPhoto = './img/user-profile-svgrepo-com.svg' 		// BU funksiya backend uzilib qolganida undan keladigan -->
+														// --> frond end serverimiz eski xotirasidan oladi 
+
 function redner(events, klyuch){
-    if (!klyuch) list.innerHTML = null
-    if(!events.users) return
-    events.users.forEach(event => {
+    if (klyuch == 1) list.innerHTML = null
+    if(!events.announs) return
+    events.announs.forEach(event => {
         let t = event.time
-        event.online == "true" ? str = "Online" : str = "Offline"
-		if (online) {
-			ph = photo					// BU funksiya backend uzilib qolganida undan keladigan -->
-			pImg = photo				// --> rasmlarni statik rasmlarga almashtirib turadi textni malumotlar --> 
-		}								// --> frond end serverimiz eski xotirasidan keladi 
-		else {
-			ph = backendApi + event.imgUrl 
-			pImg = backendApi + event.personImgUrl
-		}
         const [li] = createElements('div')
         li.setAttribute('class','hero__item')
         li.innerHTML = `
         <div class="hero__item-box">
-            <img src="${ph}" alt="" class="hero__img">
+            <img src="${online ? photo : backendApi + event.imgUrl}" alt="" class="hero__img">
             <h3 class="hero__title">${event.title}</h3>
             <div class="hero__date-box">
                 <span class="hero__date">${t.date+'/'+t.month+'/'+t.year} | <span class="hero__hour"> ${t.hour + ':' + t.minute}</span>
                 </span>
-                <span class="hero__tip hero__tip--${str.toLowerCase()}">${str}</span>
+                <span class="hero__tip hero__tip--${event.online == 'true' ? 'online' : 'offline'}">${event.online == 'true' ? 'Online' : 'Offline'}</span>
             </div>
             <div class="hero__bottom">
                 <div class="hero__profile-box">
-                    <img src="${pImg}" alt="" class="hero-profile__img">
+                    <img src="${online ? pPhoto : backendApi + event.personImgUrl}" alt="" class="hero-profile__img">
                     <div class="hero__title-box">
                         <h4 class="hero-profile__title">${event.name}</h4>
-                        <p class="hero-profile__text">${event.kartegoriya}/${event.supkartegoriya}</p>
+                        <p class="hero-profile__text">${event.category}/${event.subcategory}</p>
                     </div>
                 </div>
                 <span class="hero__view">${event.view}</span>
@@ -66,23 +58,28 @@ function redner(events, klyuch){
         </div>`
         
         list.append(li)
-        li.onclick = () => {
+        li.onclick = async() => {
             window.location.pathname = '/announcement/' + event.ID
-        }
+			let views = JSON.parse(window.localStorage.getItem('views')) ? JSON.parse(window.localStorage.getItem('views')) : []
+			if( !(views.includes(event.ID)) ) {
+				views.push(event.ID)
+				window.localStorage.setItem('views', JSON.stringify(views))
+				await req('/views', 'PUT', {postId: event.ID})
+			}
+		}
     });
 }
-
-function pagination(events){
+redner(events,2)
+function pagination(events = allevents, klyuch){
 	let limit = 12
 	let page = 1
-	if(!events.users) return
-	const paginated = events.users.slice(page * limit - limit, limit * page)
-	redner({users: paginated},false)
+	if(!events.announs) return
+	const paginated = events.announs.slice(page * limit - limit, limit * page)
+	redner({announs: paginated}, klyuch)
 	button.onclick = () => {
 		page+=1
-		console.log('salom')
-		const paginated = allevents.slice(page * limit - limit, limit * page)
-		redner({users: paginated},true)
+		const paginated = events.announs.slice(page * limit - limit, limit * page)
+		redner({announs: paginated},2)
 	}
 }
 
@@ -115,7 +112,6 @@ function filter(events){
     })
 	continer.append(div)
 }
-
 let subList =  document.querySelector('.subcategory__list')
 function sub(el){
 	subl.classList.remove('subcategory--active')
@@ -145,11 +141,10 @@ function sub(el){
 			subl.classList.toggle('subcategory--active')
 			cart.value = el
 			cart.textContent = el
+			filterKategoriya(el)
 		}	
 	})
 }
-
-
 
 
 body.onclick = (evt) =>{ 
@@ -168,3 +163,196 @@ body.onclick = (evt) =>{
 }
 
 
+date.addEventListener('change', event => {
+	if(date.value == 'undefined') return
+	filterDate(date.value)
+})
+
+onlinee.addEventListener('click', event => {
+	let online = 'true'
+	onoff(online)
+})
+
+ofline.addEventListener('click', event => {
+	let ofline = 'false'
+	onoff(ofline)
+})
+
+let resultData = {
+	announs: []
+}
+function filterDate(dateValue) {
+	if(dateValue) {
+		resultData.announs = []
+		let day = dateValue.split('-')
+		console.log(allevents)
+		events.announs.forEach(event => {
+			if( +event.time.year == +day[0] && +event.time.month == +day[1] && +event.time.date == +day[2] ) {
+				resultData.announs.push(event)
+			}
+		})
+		
+		resultData.announs.sort( function (x, y) {
+			let a = new Date(x.time.year, x.time.month - 1, x.time.date, x.time.hour, x.time.minute)
+			let b = new Date(x.time.year, x.time.month - 1, x.time.date, x.time.hour, x.time.minute)
+			return a - b
+		} )
+		return pagination(resultData, 1)
+	}
+}
+
+let resultData2 = {
+	announs: []
+}
+function filterKategoriya(supkateg) {
+	resultData2.announs = []
+	if(supkateg && resultData.announs.length > 0) {
+		resultData.announs.forEach( event => {
+			if(event.subcategory.toLowerCase() == supkateg.toLowerCase()) {
+				resultData2.announs.push(event)
+			}
+		})
+		return pagination(resultData2, 1)
+	} else if(supkateg) {
+		events.announs.forEach( event => {
+			if(event.subcategory.toLowerCase() == supkateg.toLowerCase()) {
+				resultData2.announs.push(event)
+			}
+		})
+		return pagination(resultData2, 1)
+	}
+}
+
+let resultData3 = {
+	announs: []
+}
+function onoff(online) {
+	if(online == 'true' && resultData2.announs.length > 0) {
+		resultData3.announs = []
+		resultData2.announs.forEach( event => {
+			if(event.online == 'true') {
+				resultData3.announs.push(event)
+				
+			}
+		})
+		return pagination(resultData3, 1)
+	}
+	else if(online == 'true' && resultData.announs.length > 0) {
+		resultData3.announs = []
+		resultData.announs.forEach( event => {
+			if(event.online == 'true') {
+				resultData3.announs.push(event)
+				
+			}
+		})
+		return pagination(resultData3, 1)
+	}
+	else if(online == 'false' && resultData2.announs.length > 0) {
+		resultData3.announs = []
+		resultData2.announs.forEach( event => {
+			if(event.online == 'false') {
+				resultData3.announs.push(event)
+				
+			}
+		})
+		return pagination(resultData3, 1)
+	}
+	else if(online == 'false' && resultData.announs.length > 0) {
+		resultData3.announs = []
+		resultData.announs.forEach( event => {
+			if(event.online == 'false') {
+				resultData3.announs.push(event)
+				
+			}
+		})
+		return pagination(resultData3, 1)
+	}
+	else if(online == 'false') {
+		resultData3.announs = []
+		list.innerHTML = null
+		events.announs.forEach( event => {
+			if(event.online == 'false') {
+				resultData3.announs.push(event)
+				
+			}
+		})
+		return pagination(resultData3, 1)
+	}
+	else if(online == 'true') {
+		resultData3.announs = []
+		list.innerHTML = null
+		events.announs.forEach( event => {
+			if(event.online == 'true') {
+				resultData3.announs.push(event)
+				
+			}
+		})
+		return pagination(resultData3, 1)
+	}
+	else {
+		resultData3.announs = []
+		return pagination(resultData3, 1)
+	}
+}
+let filter_speaker = document.querySelector('#filter-speaker')
+let resultData4 = {
+	announs: []
+}
+
+filter_speaker.addEventListener('keyup', event => {
+	if(resultData3.announs.length > 0 && filter_speaker.value) {
+		resultData4.announs = []
+		resultData3.announs.forEach( event => {
+			if(event.name.toLowerCase().includes(filter_speaker.value.toLowerCase())) {
+				resultData4.announs.push(event)
+			}
+		})
+		return pagination(resultData4, 1)
+	}
+	else if(resultData2.announs.length > 0 && filter_speaker.value) {
+		resultData4.announs = []
+		resultData2.announs.forEach( event => {
+			if(event.name.toLowerCase().includes(filter_speaker.value.toLowerCase())) {
+				resultData4.announs.push(event)
+			}
+		})
+		return pagination(resultData4, 1)
+	}
+	else if(resultData.announs.length > 0 && filter_speaker.value) {
+		resultData4.announs = []
+		resultData.announs.forEach( event => {
+			if(event.name.toLowerCase().includes(filter_speaker.value.toLowerCase())) {
+				resultData4.announs.push(event)
+			}
+		})
+		return pagination(resultData4, 1)
+	}
+	else if(events.announs.length > 0 && filter_speaker.value) {
+		resultData4.announs = []
+		events.announs.forEach( event => {
+			if(event.name.toLowerCase().includes(filter_speaker.value.toLowerCase())) {
+				resultData4.announs.push(event)
+			}
+		})
+		return pagination(resultData4, 1)
+	}
+	else {
+		resultData4.announs = []
+		return pagination(resultData4, 1)
+	}
+})
+
+let resultData5 = {
+	announs: []
+}
+generalSearch.addEventListener('keyup', event => {
+	resultData5.announs = []
+	if(generalSearch.value) {
+		events.announs.forEach( event => {
+			if(event.name.toLowerCase().includes(generalSearch.value.toLowerCase()) || event.title.toLowerCase().includes(generalSearch.value.toLowerCase())) {
+				resultData5.announs.push(event)
+			}
+		})
+		return pagination(resultData5, 1)
+	}
+})

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Pressa</title>
 <link rel="stylesheet" href="css/main.css">
 </head>
 <body class="body">
@@ -27,13 +27,13 @@
           <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2452 9.30493C11.8744 7.21261 11.7272 4.1855 9.80379 2.26205C7.72099 0.179252 4.34411 0.179252 2.26132 2.26205C0.17852 4.34484 0.17852 7.72172 2.26132 9.80452C4.18477 11.728 7.21188 11.8751 9.3042 10.246C9.31323 10.2562 9.32262 10.2662 9.33238 10.2759L12.1608 13.1044C12.4212 13.3647 12.8433 13.3647 13.1036 13.1044C13.364 12.844 13.364 12.4219 13.1036 12.1615L10.2752 9.33312C10.2654 9.32336 10.2554 9.31396 10.2452 9.30493ZM8.86098 3.20486C10.4231 4.76695 10.4231 7.29962 8.86098 8.86171C7.29888 10.4238 4.76622 10.4238 3.20412 8.86171C1.64203 7.29962 1.64203 4.76695 3.20412 3.20486C4.76622 1.64276 7.29888 1.64276 8.86098 3.20486Z" fill="#17266E"/>
         </svg>
       </span>
-      <input class="nav__input" type="text" placeholder="Qidiruv">
+      <input id="generalSearch" class="nav__input" type="text" placeholder="Qidiruv">
     </form>
 
       <a href="single.html" class="nav__link">Loyiha haqida</a>
       <a href="#" class="nav__link">Yordam</a>
 
-      <a href="#" class="nav__announce">E'lon berish</a>
+      <a href="/add" class="nav__announce">E'lon berish</a>
     </nav>
   </div>
 </header>
@@ -52,22 +52,22 @@
   </form>
   <div class="filter__text-box">
     <h1 class="filter__title">
-      Checking the network cables modem, and router
+      Boshlashning yo'li - gapirishni to'xtatish va harakat qilishni boshlashdir.
     </h1>
     <p class="filter__text">
-      Checking the network cables modem, and router
+      Biz bilan bir qadam oldindasiz!
     </p>
   </div>
   <form class="filter__form" method="post">
-    <input class="filter__date" value="2021-01-29" type="date">
+    <input class="filter__date" id="date" value="2022-02-03" type="date">
     <div class="filter__category-box">
       <div class="filter__category category">
         <button class="category__select-btn" value="Kategoriya">Kategoriya</button>
         <div class="category__dropdown">
           <div class="category__dropdown-box">
-            <button class="category__btn" value="dizayn">Dizayn
+            <!-- <button class="category__btn" value="dizayn">Dizayn
               <span class="category__count">23</span>
-            </button>
+            </button> -->
              <!--
             <button class="category__btn" value="it">IT</button>
             <button class="category__btn" value="qurilish">Qurilish<span class="category__count">4</span></button>
@@ -114,8 +114,8 @@
       </div>
     </div>
     <div class="filter__tip tip">
-      <button class="tip__btn tip__btn--active">Offline</button>
-      <button class="tip__btn">Online</button>
+      <button class="tip__btn tip__btn--active" id="ofline">Offline</button>
+      <button class="tip__btn" id="onlinee">Online</button>
     </div>
     <div class="filter__speaker speaker">
       <input class="speaker__input" list="speaker" name="speaker" id="filter-speaker" placeholder="Speaker">
@@ -134,7 +134,7 @@
   <h2 class="visually-hidden">test</h2>
   <ul class="hero__list">
 
-    <li class="hero__item">
+    <!-- <li class="hero__item">
       <div class="hero__item-box">
         <img src="/img/img-bg-list1.png" alt="" class="hero__img">
         <h3 class="hero__title">O'zbekistonda UX/UI dizayner qancha pul topadi?</h3>
@@ -154,7 +154,7 @@
           <span class="hero__view">1300</span>
         </div>
       </div>
-    </li>
+    </li> -->
 
   </ul>
 
@@ -210,7 +210,7 @@
           <a href="#" class="footer-top__link">E'lon berish</a>
         </li>
         <li class="footer-top__item">
-          <a href="#" class="footer-top__link">Biz haqimizda</a>
+          <a href="#" class="footer-top__link">Loyiha haqida</a>
         </li>
         <li class="footer-top__item">
           <a href="#" class="footer-top__link">Savol-javob</a>

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pressa</title>
-  <link rel="stylesheet" href="css/main.min.css">
+  <link rel="stylesheet" href="addEvent/css/main.min.css">
 </head>
 
 <body class="anons">
@@ -22,7 +22,7 @@
           <a href="#" class="nav__menu-link">Yordam</a>
         </div>
         <a href="./index.html" class="nav__logo">
-          <img src="img/site-logo.svg" width="70" height="30" alt="logo">
+          <img src="addEvent/img/site-logo.svg" width="70" height="30" alt="logo">
         </a>
         
         <form class="nav__form" method="post">
@@ -65,14 +65,14 @@
             <div class="input-wrapper">
               <label class="filter__label">Sohangizini kiriting
                 <select name="category" id="category" class="filter__category">
-                  <option value="it">IT</option>
-                  <option value="smm">SMM</option>
+                  <!-- <option value="it">IT</option>
+                  <option value="smm">SMM</option> -->
                 </select>
               </label>
               <label class="filter__label">Sohani yo’nalishini kiritng
-                <select name="direction" id="direction" class="filter__subcategory">
-                  <option value="it">Frontend</option>
-                  <option value="smm">Backend</option>
+                <select name="direction" id="supcategory" class="filter__subcategory">
+                  <!-- <option value="it">Frontend</option>
+                  <option value="smm">Backend</option> -->
                 </select>
               </label>
             </div>
@@ -105,7 +105,7 @@
               <label class="upload-img">
                 <input type="file" class="img-upload">
                 <span class="form__avatar">
-                  <img src="#" alt="" width="80" id="avatar">
+                  <img src="addEvent/img/Avatar.svg" alt="" width="80" id="avatar">
                 </span>
                 Upload img
               </label>
@@ -113,24 +113,24 @@
                 
                 <div class="input-wrapper">
                   <label class="form__label">Ism
-                    <input type="text" class="form__input" placeholder="Ismingizni kiriting">
+                    <input type="text" class="form__input" id="firstname" placeholder="Ismingizni kiriting">
                   </label>
                   <label class="form__label">Kasb yoki mutahasislig
-                    <input type="text" class="form__input" placeholder="Kasb yoki mutahasislig kirirting">
+                    <input type="text" class="form__input" id="direction" placeholder="Kasb yoki mutahasislig kirirting">
                   </label>
                 </div>
                 
                 <div class="input-wrapper">
-                  <label class="form__label">Telefon raqam
-                    <input type="text" class="form__input" placeholder="telefon raqamingizni kiriting">
+                  <label class="form__label">Telefon raqam (+ belgisi qo`yilmasin)
+                    <input type="number" class="form__input" id="tel" placeholder="telefon raqamingizni kiriting">
                   </label>
                   <label class="form__label">Email pochta
-                    <input type="text" class="form__input" placeholder="Email pochta kiriting">
+                    <input type="text" class="form__input" id="email" placeholder="Email pochta kiriting">
                   </label>
                 </div>
                 
               </div>
-              
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur alias, omnis, consectetur corporis expedita doloribus numquam quaerat ullam id maxime quo, sapiente rem nemo repellat ipsam quis distinctio ipsa cumque!
             </form>
           </div>
           
@@ -139,11 +139,11 @@
             <form class="info__about about">
               
               <label class="about__label">Matin sarlavhasi
-                <input type="text" class="about__input" placeholder="Mavzini kiriting">
+                <input type="text" class="about__input" id="about" placeholder="Mavzini kiriting">
               </label>
               <label class="about__label">
                 Elon haqida qisqacha malumot
-                <input type="text" class="about__input" placeholder="Elon haqida qisqacha malumotni kiriting">
+                <input type="text" class="about__input" id="descripion" placeholder="Elon haqida qisqacha malumotni kiriting">
               </label>
               
               <label for="img-upload">
@@ -176,7 +176,8 @@
         
       </div>
     </footer>
-    <script src="js/main.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="addEvent/js/main.js"></script>
   </body>
   
   </html>
