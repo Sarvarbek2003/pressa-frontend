@@ -1,4 +1,4 @@
-const backendApi = 'http://localhost:5005'      ///telegram-back-end.herokuapp.com
+const backendApi = 'http://telegram-back-end.herokuapp.com'      ///telegram-back-end.herokuapp.com
 
 async function request (route, method, body) {
 	let headers = {
