@@ -1,4 +1,4 @@
-const backendApi = 'http://telegram-back-end.herokuapp.com'
+const backendApi = 'https://telegram-back-end.herokuapp.com'
 
 
 module.exports = {
