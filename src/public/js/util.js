@@ -50,3 +50,16 @@ async function req (route, method, body) {
 function createElements (...array) {
 	return array.map(el => document.createElement(el))
 }
+
+
+let runTime = (time) => {
+	const [date, month, year] = new Date(time).toLocaleDateString("uz-UZ").split("/")
+	const [hour, minute] = new Date(time).toLocaleTimeString("uz-UZ").split(/:| /)
+
+	return {
+		"datee": `${date.split('-')[0] + '-' + date.split('-')[1].padStart(2,'0') + '-' + date.split('-')[2].padStart(2,'0')}`,
+		"time": `${hour.padStart(2, '0') + ':' + minute.padStart(2, '0')}`,
+		// "filter": `${date.split('-')[0] + date.split('-')[1].padStart(2,'0') + date.split('-')[2].padStart(2,'0')}`,
+		"filter": `${date.split('-')[0] + date.split('-')[1].padStart(2,'0') + date.split('-')[2].padStart(2,'0') + hour.padStart(2, '0') + minute.padStart(2, '0')}`
+	}
+}

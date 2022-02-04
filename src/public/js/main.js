@@ -8,10 +8,13 @@ let events = []
 let allevents = []	
 let online = false
 
+let timeValue = runTime(new Date().getTime())
+
+date.value = timeValue.datee
+
 ;(async()=>{
 	events = await  request('/56846846818416')  // backendan 1- bo`lib keladigan 24 ta malumot tezroq render qilish uchun  
 	if (events.online) online = true
-	console.log(events.online)
 	pagination(events)
 	filter(events)
 })()
@@ -71,7 +74,7 @@ function redner(events, klyuch){
 }
 
 setTimeout(() => {
-	render(events,2)
+	redner(events,1)
 }, 1000);
 
 function pagination(events = allevents, klyuch){

@@ -7,6 +7,7 @@ let personImgUrl = document.querySelector('.upload-img .img-upload')
 let imgUrl = document.querySelector('.img-box .img-upload')
 let events 
 let online 
+
 Elurl.addEventListener('keyup', (e) => {
   if (!e.target.value) {
     Elurl.style.backgroundImage = "url('../img/location.svg')";
@@ -29,7 +30,7 @@ elBtns.forEach(btn => {
       online  = true
     }else{
       Elurl.style.backgroundImage = "url('addEvent/img/location.svg')";
-      url.placeholder = 'Joylashuv maznilini kiriting'
+      url.placeholder = 'Joylashuv maznili'
       online  = false
     }
   })
@@ -48,6 +49,7 @@ function closeNav() {
     if (events.online) online = true
     cart(events)
 })()
+
 
 
 function cart(events){
@@ -70,9 +72,58 @@ function cart(events){
         })    
 }
 
+
+date.onchange = () => {
+    if(!(runTime(date.value + 'T23:59').filter > runTime(new Date().getTime()).filter)){
+        alert('O`tib ketgan sanani kiritish mumkin emas')
+        console.log(runTime(date.value + 'T00:00'))
+        date.value = null
+    }
+}
+
+
+time.onchange = () => {
+    if(!(runTime(date.value + 'T' +  time.value).filter >= runTime(new Date().getTime()).filter)){
+        alert('O`tib ketgan vaqtni kiritish mumkin emas')
+        time.value = null
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let button = document.querySelector("#confirm")
 
 button.onclick = async() => {
+    let chek = check()
     try {
         let formData = new FormData()
         formData.append('imgUrl', imgUrl.files[0])
@@ -96,7 +147,7 @@ button.onclick = async() => {
             modal.className = 'about__modal d-none'
         }, 5000);
     } catch(error) {
-        console.log(error.message)
+        alert(error.message)
     }
 }
 
