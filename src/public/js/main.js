@@ -69,7 +69,11 @@ function redner(events, klyuch){
 		}
     });
 }
-redner(events,2)
+
+setTimeout(() => {
+	render(events,2)
+}, 1000);
+
 function pagination(events = allevents, klyuch){
 	let limit = 12
 	let page = 1
