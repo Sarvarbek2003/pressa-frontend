@@ -489,6 +489,11 @@ img {
   z-index: 99;
 }
 
+.nav__link-box {
+  display: flex;
+  margin-left: auto
+}
+
 .nav__menu-box {
   height: 100%;
   width: 0;
