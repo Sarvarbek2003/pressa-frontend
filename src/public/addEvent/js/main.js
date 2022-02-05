@@ -219,7 +219,8 @@ function check() {
     } else {
         alert('Ma`lumotlarni to`ldirishda xatolik tekshirib qayta urinib ko`ring')
     }
-    return true
+    button.removeAttribute('disabled','disabled')
+    return false
 }
 mgupload.onclick = () => {
     mgupload.style = 'border: 1px solid tranzistion;'
