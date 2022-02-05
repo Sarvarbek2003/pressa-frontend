@@ -1,4 +1,4 @@
-const backendApi = 'https://pressauz.herokuapp.com'
+const backendApi = 'https://pressa-uz.herokuapp.com'
 
 
 module.exports = {
