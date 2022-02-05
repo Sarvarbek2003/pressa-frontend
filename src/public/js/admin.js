@@ -6,9 +6,10 @@ let data
 async function fech(){
     data = await request('/admin/data')   // frond end serverga so`rov 
     if(data == true) window.location = '/'
-    render('pending')
 }
+
 fech()
+render('pending')
 
 btns[0].value = 'pending'
 btns[1].value = 'accepted'
@@ -85,7 +86,7 @@ function render(result){
             btn2.onmouseover = () =>  btn2.style.background = "red"
             btn2.onmouseout = () => btn2.style.background = "transparent"
             
-            li.onclick = () => {
+            div.onclick = () => {
                 window.open('https://pressauz.herokuapp.com/announcement/'+el.ID, '_blank')
                 li.style.background = 'rgba(165, 179, 250, 0.2)'
             }
