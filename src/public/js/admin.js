@@ -85,7 +85,7 @@ function render(result){
             btn2.onmouseover = () =>  btn2.style.background = "red"
             btn2.onmouseout = () => btn2.style.background = "transparent"
             
-            li.onclick = () => {
+            div.onclick = () => {
                 window.open('https://pressauz.herokuapp.com/announcement/'+el.ID, '_blank')
                 li.style.background = 'rgba(165, 179, 250, 0.2)'
             }
