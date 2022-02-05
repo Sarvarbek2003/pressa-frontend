@@ -6,9 +6,10 @@ let data
 async function fech(){
     data = await request('/admin/data')   // frond end serverga so`rov 
     if(data == true) window.location = '/'
-    render('pending')
 }
+
 fech()
+render('pending')
 
 btns[0].value = 'pending'
 btns[1].value = 'accepted'
