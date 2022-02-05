@@ -1,0 +1,105 @@
+.about {
+
+  .card__box {
+    width: auto;
+    border-radius: 8px;
+  }
+
+  .card__detail {
+    width: 65%;
+  }
+
+  .card-top__holder {
+    padding: 20px 15px 40px 15px;
+  }
+
+  .card-main {
+    padding: 0 15px 40px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+
+.about__anounce-text {
+  margin-right: 30px;
+}
+
+.about__anounce-text, .about__registration-text {
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 15px;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.6);
+  width: 100%;
+}
+
+.about__anounce-count, .about__registration-count {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 38px;
+  color: $color-white;
+
+  span {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+@include breakpoint-down(1000px) {
+
+  .about {
+
+    .card__box {
+      width: 70%;
+    }
+
+    .card__detail {
+      width: 70%;
+    }
+  }
+}
+
+@include breakpoint-down(800px) {
+
+  .about {
+
+    .card__box {
+      width: 80%;
+    }
+
+    .card__detail {
+      width: 80%;
+    }
+  }
+}
+
+@include breakpoint-down(700px) {
+
+  .about {
+
+    .card__box {
+      width: 90%;
+    }
+
+    .card__detail {
+      width: 90%;
+    }
+  }
+}
+
+@include breakpoint-down(560px) {
+
+  .about {
+
+    .card__box {
+      width: 100%;
+    }
+
+    .card__detail {
+      width: 100%;
+    }
+  }
+}

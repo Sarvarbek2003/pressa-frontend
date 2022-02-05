@@ -1,0 +1,268 @@
+.announse {
+  .form__label {
+    color: #17266e;
+    width: 318px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+  }
+
+  .form__input {
+    margin: 5px 15px 0 0;
+    border-radius: 2px;
+    border: none;
+    outline: none;
+    background-color: $color-white;
+    padding: 20px;
+    &::placeholder {
+      color: #b9bed3ff;
+      font-family: Space Grotesk;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 18px;
+    }
+  }
+
+  .form__avatar {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-image: url("../../img/Avatar.svg");
+    background-size: cover;
+    background-position: center center;
+    margin-bottom: 10px;
+
+    img {
+      border-radius: 50%;
+    }
+  }
+}
+
+.announce__box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.date-controler {
+  height: 642px;
+  width: 394px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 36px 46px 56px 30px;
+  border-radius: 5px;
+  background-color: #526eff;
+  margin-right: 30px;
+}
+
+.sub-title {
+  position: absolute;
+  top: 30px;
+
+  a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.2);
+  }
+  b {
+    font-weight: 500;
+    color: #000;
+  }
+}
+
+.sub {
+  top: 85px;
+}
+
+.date__label {
+  width: 100px;
+  font-size: 12px;
+  line-height: 15px;
+  color: rgba(255, 255, 255, 1);
+  padding-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.date__data,
+.date__time {
+  width: 318px;
+  color: $color-white;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 23px;
+  background-image: url("../../img/icon-calendar.svg");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center right 20px;
+  position: relative;
+  &::-webkit-inner-spin-button,
+  &::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    width: 40%;
+    height: 40%;
+    right: -70px;
+    position: absolute;
+  }
+}
+
+.date__time {
+  background-image: url("../../img/time.svg");
+}
+
+.date__input {
+  background-image: url("../../img/location.svg");
+  color: $color-white;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 23px;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center right 20px;
+  position: relative;
+}
+
+.date-time {
+  display: none;
+}
+
+.label-time-active {
+  display: flex;
+}
+
+.date__subcategory,
+.date__categore,
+.date__data,
+.date__input,
+.date__time {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 23px;
+  margin-top: 4px;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: $color-white;
+  padding: 15px;
+  outline: none;
+  border: none;
+}
+
+.date__input {
+  &::placeholder {
+    color: $color-white;
+  }
+}
+
+.date__tip {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  padding: 2px;
+}
+
+.tip__btn {
+  width: 50%;
+  margin: 0;
+  padding: 15px 40px;
+  background: rgba(255, 255, 255, 0);
+  border: none;
+  border-radius: 2px;
+  color: $color-white;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.tip__btn--active {
+  background-color: rgba(255, 255, 255, 1);
+  color: $color-light-blue;
+}
+
+.date__label {
+  width: 100%;
+  box-sizing: border-box;
+  margin-right: 20px;
+}
+
+@include breakpoint-down(900px) {
+
+  .announce__box {
+    flex-direction: column;
+  }
+
+  .date-controler {
+    height: 650px;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .input-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 102%;
+  }
+}
+
+@include breakpoint-down(744px) {
+
+  .date-controler {
+    width: 683px;
+    margin-bottom: 30px;
+  }
+
+  .input-wrapper {
+    .date__label {
+      margin-right: 17px;
+    }
+
+    input,
+    select {
+      width: 100%;
+    }
+  }
+}
+
+@include breakpoint-down(520px) {
+
+  .date-controler {
+    width: 100%;
+    height: 620px;
+  }
+
+  .input-wrapper {
+    flex-direction: column;
+
+    input {
+      margin-right: 40px;
+    }
+  }
+
+  .date__label {
+    width: 100%;
+  }
+}
+
+@include breakpoint-down(370px) {
+
+  .date-controler {
+    height: 600px;
+    width: 346px;
+    margin-bottom: 30px;
+    padding: 22px;
+  }
+
+  .input-wrapper {
+    flex-direction: column;
+
+  }
+  .date__label {
+    width: 300px;
+  }
+}

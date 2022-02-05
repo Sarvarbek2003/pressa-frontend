@@ -1,0 +1,290 @@
+.personal__title {
+  margin: 0;
+  display: inline-block;
+}
+
+option {
+  color: black;
+}
+
+.personal__info {
+  padding: 30px 54px 40px 55px;
+  margin-top: 5px;
+  max-width: 100%;
+  border-radius: 5px;
+  background-color: #f1f2f6ff;
+  margin-bottom: 30px;
+}
+
+.info__form {
+  display: flex;
+  // flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.upload-img {
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  color: #526eff;
+}
+
+.img-upload {
+  display: none;
+}
+
+.img-box {
+  margin-top: 30px;
+  height: 325px;
+  width: 666px;
+  background: #ffffff;
+}
+
+.img-box__title {
+  font-size: 40px;
+  text-align: center;
+  line-height: 7.5em;
+  color: #17266e33;
+  font-weight: 400;
+
+  &:hover {
+    color: #526eff;
+    text-decoration: underline;
+  }
+}
+
+.info__about {
+  display: flex;
+  flex-direction: column;
+
+  .about__label {
+    color: #17266e;
+    width: 318px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+  }
+
+  .about__input {
+    height: 56px;
+    width: 666px;
+    border-radius: 2px;
+    outline: none;
+    border: none;
+    padding: 21px;
+  }
+
+  .about__texterea {
+    resize: vertical;
+    width: 666px;
+    min-height: 150px;
+    border-radius: 2px;
+    padding: 20px;
+    outline: none;
+    border: none;
+    margin-top: 5px;
+    background-color: #ffffff;
+  }
+
+  .input-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .btn-wraper {
+    display: flex;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 26px;
+  }
+}
+
+.cencel-btn {
+  padding: 15px 20px;
+  background: transparent;
+  border: 1px solid #526eff;
+  margin-right: 30px;
+  color: #526eff;
+  border-radius: 2px;
+}
+
+.ok-btn {
+  padding: 15px 20px;
+  border-radius: 2px;
+  border: none;
+  background: #526eff;
+  box-shadow: 0px 14px 54px 0px #526eff80;
+  color: #ffffff;
+}
+
+.about__modal {
+  background: #0000001a;
+  top: 0;
+  right: 0;
+  position: fixed;
+  z-index: 10000000;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(41px);
+}
+
+.modal {
+  position: fixed;
+  z-index: 10;
+  width: 500px;
+  padding: 46px 33px 33px 33px;
+  height: 231px;
+  border-radius: 2px;
+  background: #ffffff;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.modal__title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.modal__btn {
+  background: #526eff;
+  box-shadow: 0px 14px 54px 0px #526eff80;
+  margin-top: 34px;
+  padding: 13px;
+  width: 90px;
+  border-radius: 2px;
+  border: none;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 26px;
+  color: #ffffff;
+}
+
+.modal-active {
+  display: flex;
+}
+// @include breakpoint-between(940px, 1200px) {
+//   .personal__info {
+//     width: 100%;
+
+//   }
+// }
+
+@include breakpoint-down(1140px) {
+  .personal__info {
+    width:100%;
+    margin-right: 10px;
+  }
+
+  .info__forma {
+    flex-direction: column;
+    width: 90%;
+
+    .form__label {
+      width: 100%;
+    }
+  }
+
+  .about__input,
+  .about__label,
+  .about__texterea {
+    width: 100%;
+  }
+
+  .img-box {
+    width: 100%;
+  }
+}
+
+@include breakpoint-down(900px) {
+
+  .personal__info {
+    width: 100%;
+    padding: 36px 20px;
+
+    .input-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      input {
+        width: 92%;
+      }
+    }
+  }
+
+  .info__form {
+    flex-direction: column;
+    width: 100%;
+
+    .form__label {
+      width: 100%;
+    }
+  }
+  .about__input,
+  .about__label,
+  .about__texterea {
+    width: 100%;
+  }
+
+  .img-box {
+    width: 100%;
+  }
+}
+
+@include breakpoint-down(744px) {
+
+  .personal__info {
+    padding: 36px 17px 39px 20px;
+    width: 683px;
+  }
+
+  .about__texterea,
+  .about__input,
+  .img-box {
+    width: 640px;
+  }
+}
+
+@include breakpoint-down(520px) {
+
+  .personal__info {
+    width: 100%;
+    input {
+      width: 100%;
+    }
+  }
+  .form__label,
+  .about__label,
+  .about__texterea {
+    width: 100%;
+  }
+
+  .img-box {
+    width: 100%;
+  }
+}
+
+@include breakpoint-down(370px) {
+
+  .personal__info {
+    padding: 36px 17px 39px 20px;
+    width: 344px;
+  }
+
+  .about__texterea,
+  .about__input,
+  .img-box {
+    width: 299px;
+  }
+}

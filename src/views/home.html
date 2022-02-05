@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pressa</title>
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/main.min.css">
 </head>
 <body class="body">
 
@@ -14,7 +14,7 @@
     <nav class="header__nav nav">
         <button class="nav__menu-btn"></button>
       <div class="nav__menu-box ">
-        <a href="#" class="nav__menu-link">Loyiha haqida</a>
+        <a href="/about" class="nav__menu-link">Loyiha haqida</a>
         <a href="#" class="nav__menu-link">Yordam</a>
       </div>
     <a href="#" class="nav__logo">
@@ -30,8 +30,10 @@
       <input id="generalSearch" class="nav__input" type="text" placeholder="Qidiruv">
     </form>
 
-      <a href="single.html" class="nav__link">Loyiha haqida</a>
+    <div class="nav__link-box">
+      <a href="/about" class="nav__link">Loyiha haqida</a>
       <a href="#" class="nav__link">Yordam</a>
+    </div>
 
       <a href="/add" class="nav__announce">E'lon berish</a>
     </nav>
@@ -114,11 +116,11 @@
       </div>
     </div>
     <div class="filter__tip tip">
-      <button class="tip__btn tip__btn--active" id="ofline">Offline</button>
-      <button class="tip__btn" id="onlinee">Online</button>
+      <button disabled class="tip__btn tip__btn--active" id="ofline">Offline</button>
+      <button disabled class="tip__btn" id="onlinee">Online</button>
     </div>
     <div class="filter__speaker speaker">
-      <input class="speaker__input" list="speaker" name="speaker" id="filter-speaker" placeholder="Speaker">
+      <input disabled class="speaker__input" list="speaker" name="speaker" id="filter-speaker" placeholder="Speaker">
       <datalist id="speaker">
         <!-- <option value="Muhammadali Eshonqulov">
         <option value="Temurbek Adhamov">
@@ -207,10 +209,10 @@
       </a>
       <ul class="footer-top__list">
         <li class="footer-top__item">
-          <a href="#" class="footer-top__link">E'lon berish</a>
+          <a href="/add" class="footer-top__link">E'lon berish</a>
         </li>
         <li class="footer-top__item">
-          <a href="#" class="footer-top__link">Loyiha haqida</a>
+          <a href="/about" class="footer-top__link">Loyiha haqida</a>
         </li>
         <li class="footer-top__item">
           <a href="#" class="footer-top__link">Savol-javob</a>
@@ -229,7 +231,7 @@
           </a>
         </li>
         <li class="footer-bottom__web-item">
-          <a href="#" class="footer-bottom__web-link">
+          <a href="https://t.me/pressa_uzUz" class="footer-bottom__web-link">
             <svg width="13" height="13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.5 10.834a4.334 4.334 0 1 0 0-8.668 4.334 4.334 0 0 0 0 8.668Zm0 1.083a5.417 5.417 0 1 1 0-10.833 5.417 5.417 0 0 1 0 10.833ZM4.817 7.134l-1.353-.422c-.293-.09-.294-.29.066-.436L8.8 4.24c.306-.125.479.033.38.428l-.898 4.236c-.063.301-.244.373-.496.234L6.405 8.115l-.644.622c-.066.064-.12.119-.221.132-.102.014-.185-.016-.246-.184L4.823 7.13l-.007.004Z" fill="#fff"/></svg>
           </a>
         </li>
@@ -246,12 +248,11 @@
   </div>
 </footer>
 <script>
-  const elBtns = document.querySelectorAll('.tip__btn')
-  elBtns.forEach(btn => {
+  const elBtnss = document.querySelectorAll('.tip__btn')
+  elBtnss.forEach(btn => {
   btn.addEventListener('click', evt => {
-    elBtns[0].classList.remove('tip__btn--active')
-    elBtns[1].classList.remove('tip__btn--active')
-
+    elBtnss[0].classList.remove('tip__btn--active')
+    elBtnss[1].classList.remove('tip__btn--active')
 
     btn.classList.add('tip__btn--active')
   })

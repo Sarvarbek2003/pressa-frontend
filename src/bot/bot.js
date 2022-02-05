@@ -7,7 +7,6 @@ bot.on('message', (msg) =>{
 })
 
 const BOT =  (req,res,next) => {
-    console.log('salom')
     bot.sendMessage(887528138, req.postId)
 }
 

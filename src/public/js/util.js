@@ -1,4 +1,4 @@
-const backendApi = 'https://pressa-uz.herokuapp.com'      
+const backendApi = 'http://localhost:5005'      
 async function request (route, method, body) {
 	let headers = {
 		token: window.localStorage.getItem('token')

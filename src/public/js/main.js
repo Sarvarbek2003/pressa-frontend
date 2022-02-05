@@ -3,10 +3,13 @@ let list = document.querySelector('.hero__list')
 let body = document.querySelector('body')
 let categori = document.querySelector('.category')
 let subl = document.querySelector('.filter__category-box')
+let agaen = document.querySelector('.view-more__btn')
+let speeker = document.querySelector('.speaker__input')
 let str = ""
 let events = []
 let allevents = []	
 let online = false
+let disable = 1
 
 let timeValue = runTime(new Date().getTime())
 
@@ -21,7 +24,6 @@ date.value = timeValue.datee
 
 ;(async()=>{
 	allevents = await request('/56846846818416/all')  // backend serverdan keladigan 2 - malumot bu orqa fonda keladi va bunda keluvchi malumolar soni cheklanmagan -->
-	// console.log(allevents)
 })()												  // --> bu yerdagi barcha malumotlardan filter qilishdan foydalaniladi shunda databazafagi barcha berilgan elonlar filter qilib olinadi
 
 document.querySelector('.filter__form').addEventListener('submit', evt => {
@@ -62,7 +64,7 @@ function redner(events, klyuch){
         
         list.append(li)
         li.onclick = async() => {
-            window.location.pathname = '/announcement/' + event.ID
+            window.open('https://pressauz.herokuapp.com/announcement/'+event.ID, '_blank')
 			let views = JSON.parse(window.localStorage.getItem('views')) ? JSON.parse(window.localStorage.getItem('views')) : []
 			if( !(views.includes(event.ID)) ) {
 				views.push(event.ID)
@@ -73,14 +75,13 @@ function redner(events, klyuch){
     });
 }
 
-setTimeout(() => {
-	redner(events,1)
-}, 1000);
+pagination(events)
 
 function pagination(events = allevents, klyuch){
 	let limit = 12
 	let page = 1
 	if(!events.announs) return
+	if(events.announs.length < 12) agaen.style = 'display: none;'
 	const paginated = events.announs.slice(page * limit - limit, limit * page)
 	redner({announs: paginated}, klyuch)
 	button.onclick = () => {
@@ -91,8 +92,7 @@ function pagination(events = allevents, klyuch){
 }
 
 let cart = document.querySelector('.category__select-btn')
-cart.onclick = (event) =>{
-	event.preventDefault()
+cart.onclick = () =>{
 	categori.classList.toggle('category--active')
 	subl.classList.remove('subcategory--active')
 } 
@@ -119,6 +119,7 @@ function filter(events){
     })
 	continer.append(div)
 }
+
 let subList =  document.querySelector('.subcategory__list')
 function sub(el){
 	subl.classList.remove('subcategory--active')
@@ -135,6 +136,7 @@ function sub(el){
 	li.onclick = () => {
 		subl.classList.toggle('subcategory--active')
 		categori.classList.add('category--active')
+		disable += 1
 	}
 	events.cart[el].forEach(el => {
 		const [ li, button ] = createElements('li','button')
@@ -169,7 +171,6 @@ body.onclick = (evt) =>{
 	}
 }
 
-
 date.addEventListener('change', event => {
 	if(date.value == 'undefined') return
 	filterDate(date.value)
@@ -192,7 +193,6 @@ function filterDate(dateValue) {
 	if(dateValue) {
 		resultData.announs = []
 		let day = dateValue.split('-')
-		console.log(allevents)
 		events.announs.forEach(event => {
 			if( +event.time.year == +day[0] && +event.time.month == +day[1] && +event.time.date == +day[2] ) {
 				resultData.announs.push(event)
@@ -212,6 +212,13 @@ let resultData2 = {
 	announs: []
 }
 function filterKategoriya(supkateg) {
+	disable += 1
+	if(disable >= 2) {
+		onlinee.removeAttribute('disabled', 'disabled')
+		ofline.removeAttribute('disabled', 'disabled')
+		speeker.removeAttribute('disabled', 'disabled')
+		
+	}
 	resultData2.announs = []
 	if(supkateg && resultData.announs.length > 0) {
 		resultData.announs.forEach( event => {
@@ -234,6 +241,8 @@ let resultData3 = {
 	announs: []
 }
 function onoff(online) {
+	console.log('asad')
+	
 	if(online == 'true' && resultData2.announs.length > 0) {
 		resultData3.announs = []
 		resultData2.announs.forEach( event => {

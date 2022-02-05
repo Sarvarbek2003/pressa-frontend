@@ -12,7 +12,7 @@
   &:last-child{
     margin-right: 0;
   }
-
+ 
   &:not(:last-child)::after{
     content: '';
     width: 1px;
@@ -23,6 +23,7 @@
 }
 
 .breadcrumb__link {
+  text-decoration: none;
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
@@ -32,4 +33,3 @@
     color: #000;
   }
 }
-

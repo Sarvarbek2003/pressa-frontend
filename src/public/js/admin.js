@@ -5,9 +5,14 @@ let data
 
 async function fech(){
     data = await request('/admin/data')   // frond end serverga so`rov 
-    // if(data == true) window.location = '/'
+    if(data == true) window.location = '/'
+    render('pending')
 }
 fech()
+
+btns[0].value = 'pending'
+btns[1].value = 'accepted'
+btns[2].value = 'rejected'
 
 btns.forEach(el => {
     el.onclick = () => {
@@ -15,7 +20,7 @@ btns.forEach(el => {
         btns[1].classList.remove('active-btn')
         btns[2].classList.remove('active-btn')
         el.classList.add('active-btn')
-        render(el.textContent)
+        render(el.value)
     }
 })
 
@@ -23,7 +28,7 @@ function render(result){
     list.innerHTML = null
    if (!data) return
     data.forEach(el => {
-        const [ li, div, input, img, span, h3, p, a, div2, btn ] = createElements('li', 'div','input','img','span','h3','p','a','div','button')
+        const [ li, div, input, img, span, h3, p, a, div2, btn, btn2 ] = createElements('li', 'div','input','img','span','h3','p','a','div','button','button')
         if(el.result.toLowerCase() == result.toLowerCase()){
             li.className = 'menu__card card'
             div.className = 'card__wrapper'
@@ -50,18 +55,41 @@ function render(result){
 
             div2.className = 'button__wraper wrapper'
 
-            btn.id = result.toLowerCase() == 'accepted' ? 'cancel' : 'ok'
-            btn.textContent = result.toLowerCase() == 'accepted' ? 'Bekor qilish' : 'Tasdiqlash'
-            btn.className = result.toLowerCase() == 'accepted' ?  'wrapper__btn cencel-btn' : 'wrapper__btn ok-btn'
+
+            btn.id = 'ok'
+            btn.textContent =  'Tasdiqlash'
+            btn.className = 'wrapper__btn ok-btn'
+            
+            btn2.id = 'cancel' 
+            btn2.textContent =  'Bekor qilish'
+            btn2.className = 'wrapper__btn cencel-btn' 
+
+            if(result.toLowerCase() == 'pending') div2.append(btn,btn2)
+            else if (result.toLowerCase() == 'accepted') div2.append(btn2)
+            else div2.append(btn)
+             
 
             btn.onclick = () => {
                 fech()
                 li.remove()
                 update(el.ID, (btn.id == 'ok'? 'accepted' : 'rejected') )
             }
-            btn.onmouseover = () =>  btn.style.background = "red"
-            btn.onmouseout = () => btn.style.background = "blue"
-            div2.append(btn)
+            btn2.onclick = () => {
+                fech()
+                li.remove()
+                update(el.ID, (btn2.id == 'ok'? 'accepted' : 'rejected') )
+            }
+            btn.onmouseover = () =>  btn.style.background = "green"
+            btn.onmouseout = () => btn.style.background = "#526eff"
+
+            btn2.onmouseover = () =>  btn2.style.background = "red"
+            btn2.onmouseout = () => btn2.style.background = "transparent"
+            
+            li.onclick = () => {
+                window.open('https://pressauz.herokuapp.com/announcement/'+el.ID, '_blank')
+                li.style.background = 'rgba(165, 179, 250, 0.2)'
+            }
+
             span.append(h3,p,a)
             div.append(input,img,span)
             li.append(div,div2)

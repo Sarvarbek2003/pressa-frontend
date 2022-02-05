@@ -19,7 +19,7 @@ body {
   background-color: #fff;
   overflow-x: hidden;
 }
- 
+
 img {
   max-width: 100%;
   height: auto;
@@ -27,4 +27,10 @@ img {
 
 .d-none {
   display: none;
+}
+
+.search-input--active{
+  .nav__search-span, .filter-search__span  {
+    display: none !important;
+  }
 }

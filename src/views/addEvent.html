@@ -18,7 +18,7 @@
         
         <div id="mySidenav" class="nav__menu-box">
           <button class="closebtn" onclick="closeNav()">&times;</button>
-          <a href="/about" class="nav__menu-link">Loyha haqimizda</a>
+          <a href="/about" class="nav__menu-link">Loyiha haqida</a>
           <a href="#" class="nav__menu-link">Yordam</a>
         </div>
         <a href="/" class="nav__logo">
@@ -36,10 +36,10 @@
           <input class="nav__input" type="text" placeholder="Qidiruv">
         </form>
         
-        <a href="/about" class="nav__link">Loyha haqida</a>
+        <a href="/about" class="nav__link">Loyiha haqida</a>
         <a href="#" class="nav__link">Yordam</a>
         
-        <a href="#" class="nav__announce">Elon berish</a>
+        <a href="#" class="nav__announce">E'lon berish</a>
       </nav>
     </div>
   </header>
@@ -55,35 +55,36 @@
           
           <form class="filter__form">
             <div class="input-wrapper">
-              <label class="filter__label">Bo’lib o’tadigan sanani kiriting
+              <label class="filter__label">Bo’lib o’tadigan sanani kiriting:
                 <input type="date" name="date" id="date" class="filter__date">
               </label>
-              <label class="filter__label">Bo’lib o’tadigan soatni kiriting
-                <input type="time" name="time" id="time" class="filter__time">
+              <label class="filter__label">Bo’lib o’tadigan soatni kiriting:
+                <input  type="time" name="time" id="time" class="filter__time">
               </label>
             </div>
             <div class="input-wrapper">
-              <label class="filter__label">Sohangizini kiriting
+              <label class="filter__label">Sohani kiriting:
                 <select name="category" id="category" class="filter__category">
                    <!-- <option value="it">Soxa</option> -->
                  <!-- <option value="smm">SMM</option> -->
                 </select>
               </label>
-              <label class="filter__label">Sohani yo’nalishini kiritng
+              <label class="filter__label">Sohaning yo’nalishini kiriting:
                 <select name="direction" id="supcategory" class="filter__subcategory">
                   <!-- <option value="it">Frontend</option>
                   <option value="smm">Backend</option> -->
                 </select>
               </label>
             </div>
-            <div class="filter__label">Tadbir turini tanlang
+            <div class="filter__label">Tadbir turini tanlang:
               <div class="filter__tip tip">
                 <button type="button" id="online" class="tip__btn online tip__btn--active">Online</button>
                 <button type="button" id="ofline" class="tip__btn ofline">Offline</button>
               </div>
             </div>
-            <label class="filter__label">Online manzilni kiriting kiriting
+            <label id="link" class="filter__label">Online manzilnig kiriting:
               <input type="text" id="url" placeholder="Link kiritng" class="filter__input" autocomplete="off">
+              <span id='linkText'></span>
             </label>
           </form>
         </div>
@@ -94,12 +95,12 @@
       <section class="personal-data personal">
         
         <div class="about__modal d-none" id="modal">
-          <h2 class="modal__title">Sorovingiz qabul qilindi E’loningiz uchun
-            Rahmat Bizni kuzatib boring</h2>
-            <button class="modal__btn">ok</button>
+          <h2 class="modal__title">So'rovingiz qabul qilindi. E’loningiz uchun
+            rahmat, bizni kuzatib boring</h2>
+            <button class="modal__btn">Ok</button>
           </div>
           
-          <h2 class="personal__title">Shahsi malumotlar</h2>
+          <h2 class="personal__title">Shaxsiy ma'lumotlar</h2>
           <div class="personal__info info">
             <form class="info__forma">
               <label class="upload-img">
@@ -109,20 +110,23 @@
                 </span>
                 Upload img
               </label>
+              <span id="imgPerson"></span>
               <div class="info__form">
                 
                 <div class="input-wrapper">
-                  <label class="form__label">Ism
-                    <input type="text" class="form__input" id="firstname" placeholder="Ismingizni kiriting">
+                  <label id="nameV" class="form__label">Ism va familiya
+                    <input type="text" class="form__input" id="firstname" placeholder="Ism va familiyangizni kiriting">
+                    <span id="nameVal"></span>
                   </label>
-                  <label class="form__label">Kasb yoki mutahasislig
-                    <input type="text" class="form__input" id="direction" placeholder="Kasb yoki mutahasislig kirirting">
+                  <label class="form__label">Kasb yoki mutaxasislik
+                    <input type="text" class="form__input" id="direction" placeholder="Kasb yoki mutaxasisligingizni kiriting">
                   </label>
                 </div>
                 
                 <div class="input-wrapper">
-                  <label class="form__label">Telefon raqam (+ belgisi qo`yilmasin)
-                    <input type="number" class="form__input" id="tel" placeholder="telefon raqamingizni kiriting">
+                  <label id="telV" class="form__label">Telefon raqam (+ belgisi qo`yilmasin)
+                    <input type="number" class="form__input" id="tel" placeholder="Telefon raqamingizni kiriting">
+                    <span id="telVal"></span>
                   </label>
                   <label class="form__label">Email pochta
                     <input type="text" class="form__input" id="email" placeholder="Email pochta kiriting">
@@ -130,33 +134,33 @@
                 </div>
                 
               </div>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur alias, omnis, consectetur corporis expedita doloribus numquam quaerat ullam id maxime quo, sapiente rem nemo repellat ipsam quis distinctio ipsa cumque!
+                  
             </form>
           </div>
           
-          <h2 class="personal__title">E’lon haqida malumotlar</h2>
+          <h2 class="personal__title">E’lon haqida ma'lumotlar</h2>
           <div class="personal__info">
             <form class="info__about about">
               
-              <label class="about__label">Matin sarlavhasi
-                <input type="text" class="about__input" id="about" placeholder="Mavzini kiriting">
+              <label class="about__label">Matn sarlavhasi
+                <input type="text" class="about__input" id="about" placeholder="Mavzuni kiriting">
               </label>
               <label class="about__label">
-                Elon haqida qisqacha malumot
-                <input type="text" class="about__input" id="descripion" placeholder="Elon haqida qisqacha malumotni kiriting">
+                E'lon haqida qisqacha ma'lumot
+                <input type="text" class="about__input" id="descripion" placeholder="E'lon haqida qisqacha ma'lumotni kiriting">
               </label>
               
               <label for="img-upload">
-                <div id="mg-upload" class="img-box">
+                <div id="mgupload" class="img-box">
                   <input type="file" name="uploading" class="img-upload" id="img-upload">
-                  <h2 class="img-box__title">Upload img</h2>
+                  <h2 class="img-box__title">Tadbir uchun rasm</h2>
                   <img src="#" alt="">
                   
                 </div>
               </label>
-              <label class="about__label">Elon haqida batavsil malumot
+              <label class="about__label">E'lon haqida batafsil ma'lumot
                 <textarea name="texterea" id="texterea" class="about__texterea"
-                placeholder="Elon haqida batavsil malumotni kiriting"></textarea>
+                placeholder="E'lon haqida batafsil ma'lumotni kiriting"></textarea>
                 
               </label>
               
@@ -181,3 +185,5 @@
   </body>
   
   </html>
+
+

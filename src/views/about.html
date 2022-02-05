@@ -4,90 +4,158 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
   <title>Loyha haqida</title>
   <link rel="stylesheet" href="css/main.min.css">
 </head>
+<body class="about">
 
-<body>
-  
-  <header class="header">
-    <div class="header__container container">
-      <nav class="header__nav nav">
+<header class="header">
+  <div class="header__container container">
+    <nav class="header__nav nav">
         <button class="nav__menu-btn"></button>
-        <div class="nav__menu-box ">
-          <a href="#" class="nav__menu-link">Loyha haqimizda</a>
-          <a href="./about.html" class="nav__menu-link">Yordam</a>
-        </div>
-        <a href="./index.html" class="nav__logo">
-          <img src="img/logo-site.svg" width="70" height="30" alt="logo">
-        </a>
-        
-        <form class="nav__form" method="post">
-          <span class="nav__search-span">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M10.2452 9.30493C11.8744 7.21261 11.7272 4.1855 9.80379 2.26205C7.72099 0.179252 4.34411 0.179252 2.26132 2.26205C0.17852 4.34484 0.17852 7.72172 2.26132 9.80452C4.18477 11.728 7.21188 11.8751 9.3042 10.246C9.31323 10.2562 9.32262 10.2662 9.33238 10.2759L12.1608 13.1044C12.4212 13.3647 12.8433 13.3647 13.1036 13.1044C13.364 12.844 13.364 12.4219 13.1036 12.1615L10.2752 9.33312C10.2654 9.32336 10.2554 9.31396 10.2452 9.30493ZM8.86098 3.20486C10.4231 4.76695 10.4231 7.29962 8.86098 8.86171C7.29888 10.4238 4.76622 10.4238 3.20412 8.86171C1.64203 7.29962 1.64203 4.76695 3.20412 3.20486C4.76622 1.64276 7.29888 1.64276 8.86098 3.20486Z"
-              fill="#17266E" />
-            </svg>
-          </span>
-          <input class="nav__input" type="text" placeholder="Qidiruv">
-        </form>
-        
-        <a href="./about.html" class="nav__link">Loyha haqimizda</a>
-        <a href="#" class="nav__link">Yordam</a>
-        
-        <a href="#" class="nav__announce">Elon berish</a>
-      </nav>
+      <div class="nav__menu-box ">
+        <a href="/about" class="nav__menu-link">Loyiha haqida</a>
+        <a href="#" class="nav__menu-link">Yordam</a>
+      </div>
+    <a href="/" class="nav__logo">
+      <img src="img/logo-site.svg" width="70" height="30" alt="logo">
+    </a>
+
+    <div class="nav__link-box">
+      <a href="/about" class="nav__link">Loyiha haqida</a>
+      <a href="/" class="nav__link">Yordam</a>
     </div>
-  </header>
-  
-  <main class="main">
-    <div class="main__container container">
-      <span class="sub-title"><a href="./index.html" class="sub-link">Bosh sahifa</a><b> | E’lon berish</b></span>
-      
-      
-      <section class="help">
-        <h2 class="visually-hidden">test</h2>
-        <div class="help-left">
-          <p class="help-left__heading">Qanday e’lon berishni bilmayapsizmi?</p>
-          <p class="help-left__text">Checking the network cables modem, and router</p>
-          <button class="help-left__btn">batafsil</button>
-          <div class="help-left__img-box">
-            <img class="help-left__img0" src="img/img-mic0.png" alt="img of microphones">
-            <img class="help-left__img1" src="img/img-mic1.png" alt="img of microphones">
-            <img class="help-left__img2" src="img/img-mic2.png" alt="img of microphones">
-            <img class="help-left__img3" src="img/img-mic3.png" alt="img of microphones">
-            <img class="help-left__img4" src="img/img-mic4.png" alt="img of microphones">
-            <img class="help-left__img5" src="img/img-mic5.png" alt="img of microphones">
-            <img class="help-left__img6" src="img/img-mic6.png" alt="img of microphones">
+      <a href="/add" class="nav__announce">E'lon berish</a>
+    </nav>
+  </div>
+</header>
+<main class="main">
+<div class="main__container container">
+  <ul class="breadcrumb">
+    <li class="breadcrumb__item">
+      <a class="breadcrumb__link" href="/">Bosh sahifa</a>
+    </li>
+    <li class="breadcrumb__item">
+      <a class="breadcrumb__link breadcrumb__link--active" href="/about">Loyiha haqida</a>
+    </li>
+  </ul>
+  <section class="card-info card about">
+    <div class="card__box">
+      <div class="card-top">
+        <div class="card-top__holder">
+          <div class="card-top__detail">
+            <h3 class="card-top__name">Pressa</h3>
+              <p class="card-top__job">E'lon qo'yish va o'zingizga kerakli e'lonni topish</p>
           </div>
         </div>
-        <div class="help-right">
-          <p class="help-right__heading">Qanday e’lon berishni bilmayapsizmi?</p>
-          <button class="help-right__btn">batafsil</button>
-          <div class="help-right__img-box">
-            <img class="help-right__img" src="img/img-girl.png" alt="img of arrows">
-            <img class="help-right__img1" src="img/icon-arr1.svg" alt="img of arrows">
-            <img class="help-right__img2" src="img/icon-arr2.svg" alt="img of arrows">
-            <img class="help-right__img3" src="img/icon-arr3.svg" alt="img of arrows">
-            <img class="help-right__img4" src="img/icon-arr4.svg" alt="img of arrows">
-            <img class="help-right__img5" src="img/icon-arr5.svg" alt="img of arrows">
-            <img class="help-right__img6" src="img/icon-arr6.svg" alt="img of arrows">
-            <img class="help-right__img7" src="img/icon-arr7.svg" alt="img of arrows">
-            <img class="help-right__img8" src="img/icon-arr8.svg" alt="img of arrows">
-          </div>
+      </div>
+      <div class="card-main">
+        <div class="about__anounce-box">
+          <p class="about__anounce-text">Berilgan e'lonlar soni</p>
+          <p class="about__anounce-count">560 <span>ta</span></p>
         </div>
-      </section>
+        <div class="about__registration-box">
+          <p class="about__registration-text">Bizda ro'yhatdan o'tganlar soni</p>
+          <p class="about__registration-count">8000 <span>ta</span></p>
+        </div>
+      </div>
     </div>
-  </main>
-  
-  <footer class="footer">
-    <div class="footer__container container">
-      <p>footer</p>
+    <div class="card__detail">
+      <h2 class="card__title">Pressa – bu nima?</h2>
+        <p class="card__text">Bilimini ulashmoqchi bo’lgan va yangi ma’lumotlarni o’rganishni xohlaganlar uchun mutlaqo yangicha formatdagi loyiha
+        </p>
+        <img class="card__img" src="img/about.jpg" alt="hero img" width="710" height="340">
+        <p class="card__quotes">
+          Pressa - professional, ya’ni sohasidagi haqiqiy mutaxassislar o’z ilmini va tajribasini ulashmoqchi bo’lganlarni qo’llab-quvvatlagan holda, ularga o’z oldiga buyuk maqsadlar qo’ygan va izlanuvchan insonlarga ega auditoriya yig’ishda yordam berish uchun tashkil qilingan loyiha.
+        </p>
+      <div class="card-link__box">
+        <button class="card-link__btn card-link__share" type="button"></button>
+        <button class="card-link__btn card-link__comment" type="button">Izoh: </button>
+      </div>
     </div>
-  </footer>
-  <script src="js/main.js"></script>
+  </section>
+  <section class="help">
+    <h2 class="visually-hidden">test</h2>
+    <div class="help-left">
+      <p class="help-left__heading">Qanday e'lon berishni bilmayapsizmi?</p>
+      <button class="help-left__btn">Batafsil</button>
+      <div class="help-left__img-box">
+        <img class="help-left__img0" src="img/img-mic.png" alt="img of microphones">
+        <img class="help-left__img1" src="img/img-mic.png" alt="img of microphones">
+        <img class="help-left__img2" src="img/img-mic.png" alt="img of microphones">
+        <img class="help-left__img3" src="img/img-mic.png" alt="img of microphones">
+        <img class="help-left__img4" src="img/img-mic.png" alt="img of microphones">
+        <img class="help-left__img5" src="img/img-mic.png" alt="img of microphones">
+        <img class="help-left__img6" src="img/img-mic.png" alt="img of microphones">
+      </div>
+    </div>
+    <div class="help-right">
+      <p class="help-right__heading">Qanday e'lon berishni bilmayapsizmi?</p>
+      <button class="help-right__btn">Batafsil</button>
+      <div class="help-right__img-box">
+        <img class="help-right__img" src="img/img-girl.png" alt="img of arrows">
+        <img class="help-right__img1" src="img/icon-arr1.svg" alt="img of arrows">
+        <img class="help-right__img2" src="img/icon-arr2.svg" alt="img of arrows">
+        <img class="help-right__img3" src="img/icon-arr3.svg" alt="img of arrows">
+        <img class="help-right__img4" src="img/icon-arr4.svg" alt="img of arrows">
+        <img class="help-right__img5" src="img/icon-arr5.svg" alt="img of arrows">
+        <img class="help-right__img6" src="img/icon-arr6.svg" alt="img of arrows">
+        <img class="help-right__img7" src="img/icon-arr7.svg" alt="img of arrows">
+        <img class="help-right__img8" src="img/icon-arr8.svg" alt="img of arrows">
+      </div>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-top__container container">
+      <a href="/" class="footer-top__logo">
+        <img src="img/logo-site-white.svg" width="70" height="30" alt="logo">
+      </a>
+      <ul class="footer-top__list">
+        <li class="footer-top__item">
+          <a href="/add" class="footer-top__link">E'lon berish</a>
+        </li>
+        <li class="footer-top__item">
+          <a href="/about" class="footer-top__link">Loyiha haqida</a>
+        </li>
+        <li class="footer-top__item">
+          <a href="#" class="footer-top__link">Savol-javob</a>
+        </li>
+      </ul>
+      <a href="tel:+998909295279" class="footer-top__tel">+998 ( 90 ) 929-52-79</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom__container container">
+      <p class="footer-bottom__inc">Copyright 2022</p>
+      <ul class="footer-bottom__web-list">
+        <li class="footer-bottom__web-item">
+          <a href="#" class="footer-bottom__web-link">
+            <svg width="12" height="11" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.272.033C3.858.006 4.045 0 5.537 0c1.493 0 1.68.006 2.265.033.585.026.985.12 1.335.255.366.139.698.355.973.635.28.275.495.607.633.974.136.35.229.75.256 1.335.027.587.033.774.033 2.268 0 1.494-.007 1.681-.033 2.268-.027.584-.12.984-.256 1.334-.138.368-.354.7-.633.975-.275.28-.607.496-.973.634-.35.136-.75.229-1.334.256-.586.027-.773.033-2.266.033-1.492 0-1.679-.007-2.265-.033-.584-.027-.984-.12-1.333-.256a2.696 2.696 0 0 1-.974-.634 2.696 2.696 0 0 1-.634-.974c-.135-.35-.228-.75-.255-1.335C.049 7.181.043 6.994.043 5.5c0-1.494.006-1.681.033-2.267.026-.586.12-.986.255-1.336.138-.367.355-.7.635-.974.274-.28.606-.496.972-.635.35-.135.75-.228 1.334-.255Zm4.485.99C7.178.997 7.004.991 5.537.991s-1.64.006-2.22.032c-.536.025-.827.114-1.02.19-.257.1-.44.218-.632.41a1.706 1.706 0 0 0-.41.633c-.076.194-.166.485-.19 1.022-.027.58-.032.754-.032 2.222s.005 1.643.032 2.223c.024.536.114.827.19 1.021.087.239.227.455.41.633.177.182.393.322.632.41.193.076.484.165 1.02.19.58.027.753.032 2.22.032 1.468 0 1.641-.005 2.22-.032.536-.024.827-.114 1.02-.19.257-.1.44-.218.633-.41.182-.178.322-.395.41-.633.076-.194.165-.485.19-1.021.026-.58.032-.755.032-2.223s-.006-1.643-.032-2.223c-.025-.536-.114-.827-.19-1.021-.1-.256-.218-.44-.41-.632a1.705 1.705 0 0 0-.632-.412c-.194-.075-.485-.164-1.02-.189ZM4.835 7.196A1.83 1.83 0 0 0 7.363 5.32a1.835 1.835 0 0 0-3.35-.84 1.836 1.836 0 0 0 .822 2.715ZM3.54 3.5a2.824 2.824 0 0 1 4.606 3.08 2.827 2.827 0 0 1-2.609 1.746A2.823 2.823 0 0 1 2.713 5.5c0-.75.298-1.469.827-1.999Zm5.448-.407a.669.669 0 1 0-.918-.972.669.669 0 0 0 .918.972Z" fill="#fff"/></svg>
+          </a>
+        </li>
+        <li class="footer-bottom__web-item">
+          <a href="https://t.me/pressa_uzUz" class="footer-bottom__web-link">
+            <svg width="13" height="13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.5 10.834a4.334 4.334 0 1 0 0-8.668 4.334 4.334 0 0 0 0 8.668Zm0 1.083a5.417 5.417 0 1 1 0-10.833 5.417 5.417 0 0 1 0 10.833ZM4.817 7.134l-1.353-.422c-.293-.09-.294-.29.066-.436L8.8 4.24c.306-.125.479.033.38.428l-.898 4.236c-.063.301-.244.373-.496.234L6.405 8.115l-.644.622c-.066.064-.12.119-.221.132-.102.014-.185-.016-.246-.184L4.823 7.13l-.007.004Z" fill="#fff"/></svg>
+          </a>
+        </li>
+        <li class="footer-bottom__web-item">
+          <a href="#" class="footer-bottom__web-link">
+            <svg width="13" height="13" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)"><path d="M10.644 3.16a5.21 5.21 0 0 0-3.718-1.535c-2.896 0-5.256 2.349-5.259 5.232 0 .924.243 1.822.701 2.618l-.743 2.713 2.788-.728a5.28 5.28 0 0 0 2.513.637h.003c2.896 0 5.256-2.349 5.258-5.235a5.192 5.192 0 0 0-1.543-3.701Zm-3.718 8.051c-.783 0-1.552-.21-2.225-.607l-.16-.095-1.653.431.441-1.606-.103-.165a4.316 4.316 0 0 1-.668-2.314c0-2.394 1.96-4.347 4.37-4.347a4.367 4.367 0 0 1 4.04 2.686c.219.528.331 1.094.33 1.665-.003 2.403-1.964 4.352-4.372 4.352Zm2.397-3.257c-.13-.065-.775-.382-.897-.427-.12-.042-.209-.065-.295.066-.088.13-.34.426-.416.511-.075.088-.154.098-.285.033-.13-.066-.554-.203-1.056-.65a3.994 3.994 0 0 1-.731-.906c-.076-.13-.007-.2.058-.266.058-.058.131-.153.197-.228.066-.075.088-.13.13-.218.044-.088.023-.164-.009-.229-.033-.065-.295-.71-.406-.97-.106-.257-.214-.221-.295-.225-.076-.004-.164-.004-.252-.004a.485.485 0 0 0-.35.163c-.121.13-.459.447-.459 1.092s.47 1.264.537 1.352c.065.088.925 1.408 2.244 1.975.311.136.557.216.748.276.315.1.6.085.827.053.252-.038.776-.317.887-.622.109-.307.109-.568.075-.623-.032-.055-.12-.088-.252-.153Z" fill="#fff"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h13v13H0z"/></clipPath></defs></svg>
+          </a>
+        </li>
+      </ul>
+      <span class="footer-bottom__created">Created by:
+        <a href="https://portfolio-islom.netlify.app/" target="_blank" class="footer-bottom__created-link">"Linkers" creative group</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
 </body>
 
 </html>

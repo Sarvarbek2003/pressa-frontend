@@ -24,6 +24,7 @@ app.get('/', (req, res) => res.render('home'))
 app.get('/admin', (req, res) => res.render('admin'))
 app.get('/adm/login', (req, res) => res.render('login'))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 app.use('/add', (req, res) => res.render('addEvent'))
+app.use('/about', (req, res) => res.render('about'))
 
 app.get('/data',fechData.ALL)
 app.get('/admin/data',fechData.DATA)
@@ -40,6 +41,5 @@ app.use('/56846846818416',(req,res,next) => {
 },announcementRout)
 
 
-// bot.BOT()
 
 app.listen(PORT, () => console.log('server is running on http://localhost:' + PORT))                                                                                                                                                                        
