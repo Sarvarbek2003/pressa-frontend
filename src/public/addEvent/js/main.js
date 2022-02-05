@@ -191,7 +191,7 @@ texterea.onkeyup = () => {
     }
 }
 
-let = ch = true
+
 let avatarForm = document.querySelector('.upload-img')
 let body = document.querySelector('html')
 function check() {
@@ -211,7 +211,7 @@ function check() {
             imgPerson.textContent = 'Avatar rasmingizni qo\'ying!'
             imgPerson.style.color = 'red'
             body.scrollTop = 0;
-            ch = false
+            return false
         }else if(!imgUrl.files[0]){
             mgupload.style = 'border: 1px solid red;'
             body.scrollTop = body.scrollHeight - body.clientHeight - 350;
@@ -245,7 +245,7 @@ button.onclick = async() => {
         formData.append('category', category.value)
         formData.append('subcategory', supcategory.value)
         formData.append('title', about.value)
-        formData.append('descripion', descripion.value)
+        formData.append('description', descripion.value)
         formData.append('online', online)
         formData.append('link', url.value)
         formData.append('info', texterea.value)
