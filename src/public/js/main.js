@@ -18,6 +18,7 @@ date.value = timeValue.datee
 ;(async()=>{
 	events = await  request('/56846846818416')  // backendan 1- bo`lib keladigan 24 ta malumot tezroq render qilish uchun  
 	if (events.online) online = true
+	console.log(events)
 	pagination(events)
 	filter(events)
 })()
