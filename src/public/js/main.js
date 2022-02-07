@@ -93,7 +93,7 @@ function pagination(events = allevents, klyuch){
 }
 
 let cart = document.querySelector('.category__select-btn')
-cart.onsubmit = (event) =>{
+cart.onclick= (event) =>{
 	event.preventDefault()
 	categori.classList.toggle('category--active')
 	subl.classList.remove('subcategory--active')
