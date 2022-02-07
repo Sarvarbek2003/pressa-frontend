@@ -212,7 +212,7 @@ function check() {
             imgPerson.style.color = 'red'
             body.scrollTop = 0;
             return false
-        }else if(!imgUrl.files[0]){
+        }if(!imgUrl.files[0]){
             mgupload.style = 'border: 1px solid red;'
             body.scrollTop = body.scrollHeight - body.clientHeight - 350;
         } return true
