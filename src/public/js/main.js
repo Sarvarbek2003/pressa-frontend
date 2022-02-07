@@ -93,7 +93,8 @@ function pagination(events = allevents, klyuch){
 }
 
 let cart = document.querySelector('.category__select-btn')
-cart.onclick = () =>{
+cart.onclick = (event) =>{
+	event.preventDefault()
 	categori.classList.toggle('category--active')
 	subl.classList.remove('subcategory--active')
 } 
@@ -316,11 +317,6 @@ let resultData4 = {
 	announs: []
 }
 
-if (document.querySelector('form')) {
-    document.querySelector('form').addEventListener('submit', evt => {
-        evt.preventDefault()
-    })
-}
 
 
 filter_speaker.addEventListener('keyup', event => {
@@ -370,6 +366,7 @@ let resultData5 = {
 	announs: []
 }
 generalSearch.addEventListener('keyup', event => {
+	event.preventDefault()
 	resultData5.announs = []
 	if(generalSearch.value) {
 		events.announs.forEach( event => {
