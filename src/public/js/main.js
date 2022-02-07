@@ -316,6 +316,13 @@ let resultData4 = {
 	announs: []
 }
 
+if (document.querySelector('form')) {
+    document.querySelector('form').addEventListener('submit', evt => {
+        evt.preventDefault()
+    })
+}
+
+
 filter_speaker.addEventListener('keyup', event => {
 	if(resultData3.announs.length > 0 && filter_speaker.value) {
 		resultData4.announs = []
